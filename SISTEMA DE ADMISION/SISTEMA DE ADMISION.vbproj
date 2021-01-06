@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFA6D88D-EBCA-465A-A8CD-5EF3401CC8A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SISTEMA_DE_ADMISION.My.MyApplication</StartupObject>
+    <RootNamespace>SISTEMA_DE_ADMISION</RootNamespace>
+    <AssemblyName>SYSTEMADMISION</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Admision HNMCR\Desktop\INSTALADOR\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SYSTEMADMISION.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SYSTEMADMISION.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo cata.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B9C789760DA03A37D802D5BEE03C6AA44C541298</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SISTEMA DE ADMISION_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSCAR_SALHOS.Designer.vb">
+      <DependentUpon>BUSCAR_SALHOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSCAR_SALHOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDA.Designer.vb">
+      <DependentUpon>BUSQUEDA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDATAR.Designer.vb">
+      <DependentUpon>BUSQUEDATAR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDATAR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDA_HOSPITALIZACION.Designer.vb">
+      <DependentUpon>BUSQUEDA_HOSPITALIZACION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\BUSQUEDA_HOSPITALIZACION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\CONTACTO_HOSPITALIZACION.Designer.vb">
+      <DependentUpon>CONTACTO_HOSPITALIZACION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\CONTACTO_HOSPITALIZACION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\REIMPRIMIR_HOSPITALIZACION.Designer.vb">
+      <DependentUpon>REIMPRIMIR_HOSPITALIZACION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\REIMPRIMIR_HOSPITALIZACION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_BITACORA.Designer.vb">
+      <DependentUpon>TAR_BITACORA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_BITACORA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_HOSPSALA.Designer.vb">
+      <DependentUpon>TAR_HOSPSALA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_HOSPSALA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_SALA.Designer.vb">
+      <DependentUpon>TAR_SALA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_SALA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_VISITA.Designer.vb">
+      <DependentUpon>TAR_VISITA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\TAR_VISITA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BITACORA_CITA.Designer.vb">
+      <DependentUpon>BITACORA_CITA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BITACORA_CITA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BUSCAR_CITA.Designer.vb">
+      <DependentUpon>BUSCAR_CITA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BUSCAR_CITA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BUSQUEDACEX.Designer.vb">
+      <DependentUpon>BUSQUEDACEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\BUSQUEDACEX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CENTRO_REFERENCIA.Designer.vb">
+      <DependentUpon>CENTRO_REFERENCIA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CENTRO_REFERENCIA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\ELIMINAR_CITA.Designer.vb">
+      <DependentUpon>ELIMINAR_CITA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\ELIMINAR_CITA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CITADO.Designer.vb">
+      <DependentUpon>CITADO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CITADO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\REIMPRIMIRCEX.Designer.vb">
+      <DependentUpon>REIMPRIMIRCEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\REIMPRIMIRCEX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\VACA_MEDICO.Designer.vb">
+      <DependentUpon>VACA_MEDICO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\VACA_MEDICO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSCAR_SALAS.Designer.vb">
+      <DependentUpon>BUSCAR_SALAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSCAR_SALAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSQUEDAV.Designer.vb">
+      <DependentUpon>BUSQUEDAV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSQUEDAV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\CONTACTO_IMPRONTO.Designer.vb">
+      <DependentUpon>CONTACTO_IMPRONTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\CONTACTO_IMPRONTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AGREGAR_REFERENCIA.Designer.vb">
+      <DependentUpon>AGREGAR_REFERENCIA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AGREGAR_REFERENCIA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AGREGAR_SALA.Designer.vb">
+      <DependentUpon>AGREGAR_SALA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AGREGAR_SALA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUSCAR_CENSO.Designer.vb">
+      <DependentUpon>BUSCAR_CENSO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BUSCAR_CENSO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUSCAR_PACIENTE.Designer.vb">
+      <DependentUpon>BUSCAR_PACIENTE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BUSCAR_PACIENTE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CALENDARIO_CITA.Designer.vb">
+      <DependentUpon>CALENDARIO_CITA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CALENDARIO_CITA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CITASCEX.Designer.vb">
+      <DependentUpon>CITASCEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION CONSULTA EXTERNA\CITASCEX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\HOSPITALIZACION.Designer.vb">
+      <DependentUpon>HOSPITALIZACION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIISION HOSPITALIZACION\HOSPITALIZACION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSQUEDA_IMPRONTO.Designer.vb">
+      <DependentUpon>BUSQUEDA_IMPRONTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\BUSQUEDA_IMPRONTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\IMPRONTO.Designer.vb">
+      <DependentUpon>IMPRONTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\IMPRONTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\REIMPRIMIR_IMPRONTO.Designer.vb">
+      <DependentUpon>REIMPRIMIR_IMPRONTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMISION IMPRONTO\REIMPRIMIR_IMPRONTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAMBIO_CLAVE.Designer.vb">
+      <DependentUpon>CAMBIO_CLAVE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CAMBIO_CLAVE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CENSO_REGISTROMOD.Designer.vb">
+      <DependentUpon>CENSO_REGISTROMOD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CENSO_REGISTROMOD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSCAR_DEF.Designer.vb">
+      <DependentUpon>BUSCAR_DEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSCAR_DEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSCAR_MOD.Designer.vb">
+      <DependentUpon>BUSCAR_MOD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSCAR_MOD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSQUEDADEF.Designer.vb">
+      <DependentUpon>BUSQUEDADEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSQUEDADEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSREGDEF.Designer.vb">
+      <DependentUpon>BUSREGDEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\BUSREGDEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\ENT_DEFUNCION.Designer.vb">
+      <DependentUpon>ENT_DEFUNCION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\ENT_DEFUNCION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\MOD_DEF.Designer.vb">
+      <DependentUpon>MOD_DEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\MOD_DEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\REC_DEFUNCION.Designer.vb">
+      <DependentUpon>REC_DEFUNCION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\REC_DEFUNCION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\REGISTRO.Designer.vb">
+      <DependentUpon>REGISTRO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\REGISTRO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\REIMPRIMIRDEF.Designer.vb">
+      <DependentUpon>REIMPRIMIRDEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\REIMPRIMIRDEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEFUNCION\SALA_DEF.Designer.vb">
+      <DependentUpon>SALA_DEF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEFUNCION\SALA_DEF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEPARTAMENTO.Designer.vb">
+      <DependentUpon>DEPARTAMENTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DEPARTAMENTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMER_BITACORA.Designer.vb">
+      <DependentUpon>EMER_BITACORA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMER_BITACORA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FECHAYHORA.Designer.vb">
+      <DependentUpon>FECHAYHORA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FECHAYHORA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HORA.Designer.vb">
+      <DependentUpon>HORA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HORA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LEQ\MENU_LEQ.Designer.vb">
+      <DependentUpon>MENU_LEQ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LEQ\MENU_LEQ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LISTA_EMPLEADO.Designer.vb">
+      <DependentUpon>LISTA_EMPLEADO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LISTA_EMPLEADO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MEDICOS\AGREGAR_ESPECIALIDAD.Designer.vb">
+      <DependentUpon>AGREGAR_ESPECIALIDAD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICOS\AGREGAR_ESPECIALIDAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MEDICOS\BUSCAR_MEDICO.Designer.vb">
+      <DependentUpon>BUSCAR_MEDICO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICOS\BUSCAR_MEDICO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.vb">
+      <DependentUpon>LOGIN.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODIFICAR_REGISTRO.Designer.vb">
+      <DependentUpon>MODIFICAR_REGISTRO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MODIFICAR_REGISTRO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MEDICOS\NUEVO_MEDICO.Designer.vb">
+      <DependentUpon>NUEVO_MEDICO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICOS\NUEVO_MEDICO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NUEVO_USUARIO.Designer.vb">
+      <DependentUpon>NUEVO_USUARIO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NUEVO_USUARIO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRINCIPAL.Designer.vb">
+      <DependentUpon>PRINCIPAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRINCIPAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\ATENCION.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATENCION.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\ATENCIONCEX.Designer.vb">
+      <DependentUpon>ATENCIONCEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\ATENCIONCEX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\CONTROLDEF.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CONTROLDEF.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\DTCITADO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTCITADO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\EVOLUCION.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EVOLUCION.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\IMPRONTOS.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMPRONTOS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RCITADO.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RCITADO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RPCITADO.Designer.vb">
+      <DependentUpon>RPCITADO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\RPCITADO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RPDEFUNCION.Designer.vb">
+      <DependentUpon>RPDEFUNCION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\RPDEFUNCION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RPEVOLUCION.Designer.vb">
+      <DependentUpon>RPEVOLUCION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\RPEVOLUCION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RPHOSPITALIZACION.Designer.vb">
+      <DependentUpon>RPHOSPITALIZACION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\RPHOSPITALIZACION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RPIMPRONTO.Designer.vb">
+      <DependentUpon>RPIMPRONTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\RPIMPRONTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\RP_HOSPITALIZACION.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_HOSPITALIZACION.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\BUSCAR_SALHOS.resx">
+      <DependentUpon>BUSCAR_SALHOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\BUSQUEDA.resx">
+      <DependentUpon>BUSQUEDA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\BUSQUEDATAR.resx">
+      <DependentUpon>BUSQUEDATAR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\BUSQUEDA_HOSPITALIZACION.resx">
+      <DependentUpon>BUSQUEDA_HOSPITALIZACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\CONTACTO_HOSPITALIZACION.resx">
+      <DependentUpon>CONTACTO_HOSPITALIZACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\REIMPRIMIR_HOSPITALIZACION.resx">
+      <DependentUpon>REIMPRIMIR_HOSPITALIZACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\TAR_BITACORA.resx">
+      <DependentUpon>TAR_BITACORA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\TAR_HOSPSALA.resx">
+      <DependentUpon>TAR_HOSPSALA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\TAR_SALA.resx">
+      <DependentUpon>TAR_SALA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\TAR_VISITA.resx">
+      <DependentUpon>TAR_VISITA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\BITACORA_CITA.resx">
+      <DependentUpon>BITACORA_CITA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\BUSCAR_CITA.resx">
+      <DependentUpon>BUSCAR_CITA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\BUSQUEDACEX.resx">
+      <DependentUpon>BUSQUEDACEX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\CENTRO_REFERENCIA.resx">
+      <DependentUpon>CENTRO_REFERENCIA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\ELIMINAR_CITA.resx">
+      <DependentUpon>ELIMINAR_CITA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\CITADO.resx">
+      <DependentUpon>CITADO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\REIMPRIMIRCEX.resx">
+      <DependentUpon>REIMPRIMIRCEX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\VACA_MEDICO.resx">
+      <DependentUpon>VACA_MEDICO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\BUSCAR_SALAS.resx">
+      <DependentUpon>BUSCAR_SALAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\BUSQUEDAV.resx">
+      <DependentUpon>BUSQUEDAV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\CONTACTO_IMPRONTO.resx">
+      <DependentUpon>CONTACTO_IMPRONTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AGREGAR_REFERENCIA.resx">
+      <DependentUpon>AGREGAR_REFERENCIA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AGREGAR_SALA.resx">
+      <DependentUpon>AGREGAR_SALA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BUSCAR_CENSO.resx">
+      <DependentUpon>BUSCAR_CENSO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BUSCAR_PACIENTE.resx">
+      <DependentUpon>BUSCAR_PACIENTE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\CALENDARIO_CITA.resx">
+      <DependentUpon>CALENDARIO_CITA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION CONSULTA EXTERNA\CITASCEX.resx">
+      <DependentUpon>CITASCEX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIISION HOSPITALIZACION\HOSPITALIZACION.resx">
+      <DependentUpon>HOSPITALIZACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\BUSQUEDA_IMPRONTO.resx">
+      <DependentUpon>BUSQUEDA_IMPRONTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\IMPRONTO.resx">
+      <DependentUpon>IMPRONTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMISION IMPRONTO\REIMPRIMIR_IMPRONTO.resx">
+      <DependentUpon>REIMPRIMIR_IMPRONTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAMBIO_CLAVE.resx">
+      <DependentUpon>CAMBIO_CLAVE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CENSO_REGISTROMOD.resx">
+      <DependentUpon>CENSO_REGISTROMOD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\BUSCAR_DEF.resx">
+      <DependentUpon>BUSCAR_DEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\BUSCAR_MOD.resx">
+      <DependentUpon>BUSCAR_MOD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\BUSQUEDADEF.resx">
+      <DependentUpon>BUSQUEDADEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\BUSREGDEF.resx">
+      <DependentUpon>BUSREGDEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\ENT_DEFUNCION.resx">
+      <DependentUpon>ENT_DEFUNCION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\MOD_DEF.resx">
+      <DependentUpon>MOD_DEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\REC_DEFUNCION.resx">
+      <DependentUpon>REC_DEFUNCION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\REGISTRO.resx">
+      <DependentUpon>REGISTRO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\REIMPRIMIRDEF.resx">
+      <DependentUpon>REIMPRIMIRDEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEFUNCION\SALA_DEF.resx">
+      <DependentUpon>SALA_DEF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEPARTAMENTO.resx">
+      <DependentUpon>DEPARTAMENTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMER_BITACORA.resx">
+      <DependentUpon>EMER_BITACORA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FECHAYHORA.resx">
+      <DependentUpon>FECHAYHORA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HORA.resx">
+      <DependentUpon>HORA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LEQ\MENU_LEQ.resx">
+      <DependentUpon>MENU_LEQ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LISTA_EMPLEADO.resx">
+      <DependentUpon>LISTA_EMPLEADO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MEDICOS\AGREGAR_ESPECIALIDAD.resx">
+      <DependentUpon>AGREGAR_ESPECIALIDAD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MEDICOS\BUSCAR_MEDICO.resx">
+      <DependentUpon>BUSCAR_MEDICO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODIFICAR_REGISTRO.resx">
+      <DependentUpon>MODIFICAR_REGISTRO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MEDICOS\NUEVO_MEDICO.resx">
+      <DependentUpon>NUEVO_MEDICO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NUEVO_USUARIO.resx">
+      <DependentUpon>NUEVO_USUARIO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRINCIPAL.resx">
+      <DependentUpon>PRINCIPAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\ATENCION.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ATENCION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\ATENCIONCEX.resx">
+      <DependentUpon>ATENCIONCEX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\CONTROLDEF.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CONTROLDEF.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\EVOLUCION.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EVOLUCION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\IMPRONTOS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMPRONTOS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RCITADO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RCITADO.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RPCITADO.resx">
+      <DependentUpon>RPCITADO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RPDEFUNCION.resx">
+      <DependentUpon>RPDEFUNCION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RPEVOLUCION.resx">
+      <DependentUpon>RPEVOLUCION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RPHOSPITALIZACION.resx">
+      <DependentUpon>RPHOSPITALIZACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RPIMPRONTO.resx">
+      <DependentUpon>RPIMPRONTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\RP_HOSPITALIZACION.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_HOSPITALIZACION.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="REPORTES\DTCITADO.xsc">
+      <DependentUpon>DTCITADO.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\DTCITADO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTCITADO.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="REPORTES\DTCITADO.xss">
+      <DependentUpon>DTCITADO.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo cata.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CrystalActiveXReportViewerLib13">
+      <Guid>{B816E96D-D151-4000-BADB-53A2D8F3FC65}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportViewerExportLib">
+      <Guid>{5C21A516-C6AC-42F2-A7B7-846FFE1B122A}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

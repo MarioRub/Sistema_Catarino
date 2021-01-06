@@ -1,0 +1,3 @@
+Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123
+
+SERVER ROLES: DBCREATOR, PUBLIC

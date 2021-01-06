@@ -1,0 +1,2 @@
+HORA: hh:mm tt (AM Y PM) NO PONER a.m. y p.m. YA QUE FALLARA EL SISTEMA
+FECHA: dd/MMM/YYYY
