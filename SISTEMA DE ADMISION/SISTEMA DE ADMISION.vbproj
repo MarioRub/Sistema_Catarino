@@ -547,6 +547,12 @@
       <DependentUpon>RP_HOSPITALIZACION.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SOLICITUD_EXPEDIENTEARCHIVO.Designer.vb">
+      <DependentUpon>SOLICITUD_EXPEDIENTEARCHIVO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SOLICITUD_EXPEDIENTEARCHIVO.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ADMIISION HOSPITALIZACION\BUSCAR_SALHOS.resx">
@@ -764,6 +770,9 @@
     <EmbeddedResource Include="REPORTES\RP_HOSPITALIZACION.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RP_HOSPITALIZACION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOLICITUD_EXPEDIENTEARCHIVO.resx">
+      <DependentUpon>SOLICITUD_EXPEDIENTEARCHIVO.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -2,8 +2,8 @@
 Imports System.Data.OleDb
 
 Public Class LOGIN
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Private Sub FORM_LOGIN_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
         Me.Opacity = 0.1
