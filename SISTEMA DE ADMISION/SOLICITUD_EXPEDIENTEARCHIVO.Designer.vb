@@ -33,8 +33,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.BTNESPECIALIDAD = New System.Windows.Forms.Button()
-        Me.TXTESPECIALIDAD = New System.Windows.Forms.TextBox()
         Me.TXTMEDICO = New System.Windows.Forms.TextBox()
         Me.BTNMEDICO = New System.Windows.Forms.Button()
         Me.TXTCONSULTORIO = New System.Windows.Forms.TextBox()
@@ -44,6 +42,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.TXTPACIENTE = New System.Windows.Forms.TextBox()
         Me.BTNPACIENTE = New System.Windows.Forms.Button()
         Me.BTNCONFIRMAR = New System.Windows.Forms.Button()
+        Me.CMBESPECIALIDAD = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -153,25 +152,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Label9.Text = "Nombre del Paciente"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'BTNESPECIALIDAD
-        '
-        Me.BTNESPECIALIDAD.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.BTNESPECIALIDAD.BackgroundImage = CType(resources.GetObject("BTNESPECIALIDAD.BackgroundImage"), System.Drawing.Image)
-        Me.BTNESPECIALIDAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTNESPECIALIDAD.FlatAppearance.BorderSize = 50
-        Me.BTNESPECIALIDAD.Location = New System.Drawing.Point(260, 229)
-        Me.BTNESPECIALIDAD.Name = "BTNESPECIALIDAD"
-        Me.BTNESPECIALIDAD.Size = New System.Drawing.Size(31, 25)
-        Me.BTNESPECIALIDAD.TabIndex = 10
-        Me.BTNESPECIALIDAD.UseVisualStyleBackColor = False
-        '
-        'TXTESPECIALIDAD
-        '
-        Me.TXTESPECIALIDAD.Location = New System.Drawing.Point(106, 232)
-        Me.TXTESPECIALIDAD.Name = "TXTESPECIALIDAD"
-        Me.TXTESPECIALIDAD.Size = New System.Drawing.Size(148, 20)
-        Me.TXTESPECIALIDAD.TabIndex = 11
-        '
         'TXTMEDICO
         '
         Me.TXTMEDICO.Location = New System.Drawing.Point(349, 227)
@@ -193,7 +173,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTCONSULTORIO
         '
-        Me.TXTCONSULTORIO.Location = New System.Drawing.Point(106, 285)
+        Me.TXTCONSULTORIO.Location = New System.Drawing.Point(106, 283)
         Me.TXTCONSULTORIO.Name = "TXTCONSULTORIO"
         Me.TXTCONSULTORIO.Size = New System.Drawing.Size(148, 20)
         Me.TXTCONSULTORIO.TabIndex = 14
@@ -257,11 +237,20 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.BTNCONFIRMAR.Text = "Confirmar Retiro"
         Me.BTNCONFIRMAR.UseVisualStyleBackColor = True
         '
+        'CMBESPECIALIDAD
+        '
+        Me.CMBESPECIALIDAD.FormattingEnabled = True
+        Me.CMBESPECIALIDAD.Location = New System.Drawing.Point(106, 227)
+        Me.CMBESPECIALIDAD.Name = "CMBESPECIALIDAD"
+        Me.CMBESPECIALIDAD.Size = New System.Drawing.Size(181, 21)
+        Me.CMBESPECIALIDAD.TabIndex = 21
+        '
         'SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 574)
+        Me.Controls.Add(Me.CMBESPECIALIDAD)
         Me.Controls.Add(Me.BTNCONFIRMAR)
         Me.Controls.Add(Me.BTNPACIENTE)
         Me.Controls.Add(Me.TXTPACIENTE)
@@ -271,8 +260,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Controls.Add(Me.TXTCONSULTORIO)
         Me.Controls.Add(Me.BTNMEDICO)
         Me.Controls.Add(Me.TXTMEDICO)
-        Me.Controls.Add(Me.TXTESPECIALIDAD)
-        Me.Controls.Add(Me.BTNESPECIALIDAD)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -300,8 +287,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents BTNESPECIALIDAD As Button
-    Friend WithEvents TXTESPECIALIDAD As TextBox
     Friend WithEvents TXTMEDICO As TextBox
     Friend WithEvents BTNMEDICO As Button
     Friend WithEvents TXTCONSULTORIO As TextBox
@@ -311,4 +296,5 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents TXTPACIENTE As TextBox
     Friend WithEvents BTNPACIENTE As Button
     Friend WithEvents BTNCONFIRMAR As Button
+    Friend WithEvents CMBESPECIALIDAD As ComboBox
 End Class
