@@ -63,7 +63,7 @@ Public Class LOGIN
                 If TABLA.Rows.Count <> 0 Then
                     '---------------------------------GUARDAR-------------------
                     CONE.Open()
-                    Dim LOGINBD As String = "UPDATE LOGIN SET ESTATUS='ON' WHERE IDENTIDAD='" & TXTIDENTIDAD.Text & "'"
+                    Dim LOGINBD As String = "UPDATE LOGIN SET ESTATUS='OFF' WHERE IDENTIDAD='" & TXTIDENTIDAD.Text & "'"
                     Dim GUARDAR As String = "INSERT INTO REG_LOGIN (USUARIO, IDENTIDAD, TURNO, COMENTARIO, FECHA_INGRESO, HORA_INGRESO, " _
                     & "DEPARTAMENTO) VALUES ('" & TXTUSUARIO.Text & "','" & TXTIDENTIDAD.Text & "','" & CMBTURNO.Text & "','" _
                     & TXTCOMENTARIO.Text & "','" & FECHA & "','" & LBHORARIO.Text & "','" & TXTDEPARTAMENTO.Text & "')"

@@ -971,7 +971,6 @@ C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDeci
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\stdole.dll
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbprojResolveAssemblyReference.cache
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSCAR_SALHOS.resources
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSQUEDA.resources
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSQUEDATAR.resources
@@ -1039,3 +1038,6 @@ C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.exe.manifest
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.application
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.SOLICITUD_EXPEDIENTEARCHIVO.resources
+C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbprojAssemblyReference.cache
+C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.CoreCompileInputs.cache
+C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.CopyComplete
