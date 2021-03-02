@@ -218,7 +218,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.TXTPACIENTE.Location = New System.Drawing.Point(357, 451)
         Me.TXTPACIENTE.Name = "TXTPACIENTE"
-        Me.TXTPACIENTE.Size = New System.Drawing.Size(148, 20)
+        Me.TXTPACIENTE.Size = New System.Drawing.Size(204, 20)
         Me.TXTPACIENTE.TabIndex = 18
         '
         'BTNCONFIRMAR
@@ -262,7 +262,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.TXTNOMBREMEDICO.Location = New System.Drawing.Point(357, 313)
         Me.TXTNOMBREMEDICO.Name = "TXTNOMBREMEDICO"
-        Me.TXTNOMBREMEDICO.Size = New System.Drawing.Size(148, 20)
+        Me.TXTNOMBREMEDICO.Size = New System.Drawing.Size(204, 20)
         Me.TXTNOMBREMEDICO.TabIndex = 26
         '
         'Label10
@@ -271,9 +271,9 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label10.Location = New System.Drawing.Point(354, 293)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(130, 17)
+        Me.Label10.Size = New System.Drawing.Size(207, 17)
         Me.Label10.TabIndex = 27
-        Me.Label10.Text = "Nombre del Medico"
+        Me.Label10.Text = "Nombre del Medico Encontrado"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'SOLICITUD_EXPEDIENTEARCHIVO
