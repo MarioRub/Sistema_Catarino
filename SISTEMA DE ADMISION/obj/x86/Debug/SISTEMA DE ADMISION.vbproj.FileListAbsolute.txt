@@ -1041,3 +1041,4 @@ C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbprojAssemblyReference.cache
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.CoreCompileInputs.cache
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.CopyComplete
+C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSCAR_EXPEDIENTE.resources
