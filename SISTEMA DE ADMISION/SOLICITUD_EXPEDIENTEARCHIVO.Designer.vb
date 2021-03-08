@@ -35,8 +35,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TXTMEDICO = New System.Windows.Forms.TextBox()
         Me.BTNMEDICO = New System.Windows.Forms.Button()
-        Me.TXTCONSULTORIO = New System.Windows.Forms.TextBox()
-        Me.BTNCONSULTORIO = New System.Windows.Forms.Button()
         Me.TXTEXPEDIENTE = New System.Windows.Forms.TextBox()
         Me.BTNEXPEDIENTE = New System.Windows.Forms.Button()
         Me.TXTPACIENTE = New System.Windows.Forms.TextBox()
@@ -46,6 +44,13 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TXTNOMBREMEDICO = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.TXTCOD_ESPECIALIDAD = New System.Windows.Forms.TextBox()
+        Me.CMBCONSULTORIO = New System.Windows.Forms.ComboBox()
+        Me.CMBBUSQUEDA = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TXTNOMBREEMPLEADO = New System.Windows.Forms.TextBox()
+        Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,7 +89,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.Label3.Location = New System.Drawing.Point(74, 190)
+        Me.Label3.Location = New System.Drawing.Point(74, 187)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 25)
         Me.Label3.TabIndex = 3
@@ -95,7 +100,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label4.Location = New System.Drawing.Point(111, 235)
+        Me.Label4.Location = New System.Drawing.Point(104, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 17)
         Me.Label4.TabIndex = 4
@@ -106,7 +111,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(354, 235)
+        Me.Label5.Location = New System.Drawing.Point(347, 219)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 17)
         Me.Label5.TabIndex = 5
@@ -117,7 +122,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(111, 293)
+        Me.Label6.Location = New System.Drawing.Point(104, 277)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 17)
         Me.Label6.TabIndex = 6
@@ -128,7 +133,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.Label7.Location = New System.Drawing.Point(74, 379)
+        Me.Label7.Location = New System.Drawing.Point(79, 427)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(175, 25)
         Me.Label7.TabIndex = 7
@@ -139,7 +144,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label8.Location = New System.Drawing.Point(111, 431)
+        Me.Label8.Location = New System.Drawing.Point(106, 522)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 17)
         Me.Label8.TabIndex = 8
@@ -150,7 +155,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label9.Location = New System.Drawing.Point(354, 431)
+        Me.Label9.Location = New System.Drawing.Point(347, 464)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(140, 17)
         Me.Label9.TabIndex = 9
@@ -159,7 +164,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTMEDICO
         '
-        Me.TXTMEDICO.Location = New System.Drawing.Point(357, 255)
+        Me.TXTMEDICO.Location = New System.Drawing.Point(350, 239)
         Me.TXTMEDICO.Name = "TXTMEDICO"
         Me.TXTMEDICO.Size = New System.Drawing.Size(148, 20)
         Me.TXTMEDICO.TabIndex = 12
@@ -170,34 +175,15 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.BTNMEDICO.BackgroundImage = CType(resources.GetObject("BTNMEDICO.BackgroundImage"), System.Drawing.Image)
         Me.BTNMEDICO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNMEDICO.FlatAppearance.BorderSize = 50
-        Me.BTNMEDICO.Location = New System.Drawing.Point(511, 252)
+        Me.BTNMEDICO.Location = New System.Drawing.Point(504, 236)
         Me.BTNMEDICO.Name = "BTNMEDICO"
         Me.BTNMEDICO.Size = New System.Drawing.Size(31, 25)
         Me.BTNMEDICO.TabIndex = 13
         Me.BTNMEDICO.UseVisualStyleBackColor = False
         '
-        'TXTCONSULTORIO
-        '
-        Me.TXTCONSULTORIO.Location = New System.Drawing.Point(114, 311)
-        Me.TXTCONSULTORIO.Name = "TXTCONSULTORIO"
-        Me.TXTCONSULTORIO.Size = New System.Drawing.Size(148, 20)
-        Me.TXTCONSULTORIO.TabIndex = 14
-        '
-        'BTNCONSULTORIO
-        '
-        Me.BTNCONSULTORIO.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.BTNCONSULTORIO.BackgroundImage = CType(resources.GetObject("BTNCONSULTORIO.BackgroundImage"), System.Drawing.Image)
-        Me.BTNCONSULTORIO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTNCONSULTORIO.FlatAppearance.BorderSize = 50
-        Me.BTNCONSULTORIO.Location = New System.Drawing.Point(268, 308)
-        Me.BTNCONSULTORIO.Name = "BTNCONSULTORIO"
-        Me.BTNCONSULTORIO.Size = New System.Drawing.Size(31, 25)
-        Me.BTNCONSULTORIO.TabIndex = 15
-        Me.BTNCONSULTORIO.UseVisualStyleBackColor = False
-        '
         'TXTEXPEDIENTE
         '
-        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(114, 451)
+        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(109, 542)
         Me.TXTEXPEDIENTE.Name = "TXTEXPEDIENTE"
         Me.TXTEXPEDIENTE.Size = New System.Drawing.Size(148, 20)
         Me.TXTEXPEDIENTE.TabIndex = 16
@@ -208,7 +194,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.BTNEXPEDIENTE.BackgroundImage = CType(resources.GetObject("BTNEXPEDIENTE.BackgroundImage"), System.Drawing.Image)
         Me.BTNEXPEDIENTE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNEXPEDIENTE.FlatAppearance.BorderSize = 50
-        Me.BTNEXPEDIENTE.Location = New System.Drawing.Point(268, 448)
+        Me.BTNEXPEDIENTE.Location = New System.Drawing.Point(263, 539)
         Me.BTNEXPEDIENTE.Name = "BTNEXPEDIENTE"
         Me.BTNEXPEDIENTE.Size = New System.Drawing.Size(31, 25)
         Me.BTNEXPEDIENTE.TabIndex = 17
@@ -216,14 +202,14 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTPACIENTE
         '
-        Me.TXTPACIENTE.Location = New System.Drawing.Point(357, 451)
+        Me.TXTPACIENTE.Location = New System.Drawing.Point(350, 484)
         Me.TXTPACIENTE.Name = "TXTPACIENTE"
-        Me.TXTPACIENTE.Size = New System.Drawing.Size(204, 20)
+        Me.TXTPACIENTE.Size = New System.Drawing.Size(185, 20)
         Me.TXTPACIENTE.TabIndex = 18
         '
         'BTNCONFIRMAR
         '
-        Me.BTNCONFIRMAR.Location = New System.Drawing.Point(257, 541)
+        Me.BTNCONFIRMAR.Location = New System.Drawing.Point(262, 597)
         Me.BTNCONFIRMAR.Name = "BTNCONFIRMAR"
         Me.BTNCONFIRMAR.Size = New System.Drawing.Size(150, 32)
         Me.BTNCONFIRMAR.TabIndex = 20
@@ -233,7 +219,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         'CMBESPECIALIDAD
         '
         Me.CMBESPECIALIDAD.FormattingEnabled = True
-        Me.CMBESPECIALIDAD.Location = New System.Drawing.Point(114, 255)
+        Me.CMBESPECIALIDAD.Location = New System.Drawing.Point(107, 239)
         Me.CMBESPECIALIDAD.Name = "CMBESPECIALIDAD"
         Me.CMBESPECIALIDAD.Size = New System.Drawing.Size(181, 21)
         Me.CMBESPECIALIDAD.TabIndex = 21
@@ -260,28 +246,101 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTNOMBREMEDICO
         '
-        Me.TXTNOMBREMEDICO.Location = New System.Drawing.Point(357, 313)
+        Me.TXTNOMBREMEDICO.Location = New System.Drawing.Point(350, 297)
         Me.TXTNOMBREMEDICO.Name = "TXTNOMBREMEDICO"
-        Me.TXTNOMBREMEDICO.Size = New System.Drawing.Size(204, 20)
+        Me.TXTNOMBREMEDICO.Size = New System.Drawing.Size(185, 20)
         Me.TXTNOMBREMEDICO.TabIndex = 26
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label10.Location = New System.Drawing.Point(354, 293)
+        Me.Label10.Location = New System.Drawing.Point(347, 277)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(207, 17)
         Me.Label10.TabIndex = 27
         Me.Label10.Text = "Nombre del Medico Encontrado"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'TXTCOD_ESPECIALIDAD
+        '
+        Me.TXTCOD_ESPECIALIDAD.Enabled = False
+        Me.TXTCOD_ESPECIALIDAD.Location = New System.Drawing.Point(58, 239)
+        Me.TXTCOD_ESPECIALIDAD.Name = "TXTCOD_ESPECIALIDAD"
+        Me.TXTCOD_ESPECIALIDAD.Size = New System.Drawing.Size(43, 20)
+        Me.TXTCOD_ESPECIALIDAD.TabIndex = 29
+        '
+        'CMBCONSULTORIO
+        '
+        Me.CMBCONSULTORIO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
+        Me.CMBCONSULTORIO.FormattingEnabled = True
+        Me.CMBCONSULTORIO.Location = New System.Drawing.Point(107, 297)
+        Me.CMBCONSULTORIO.Name = "CMBCONSULTORIO"
+        Me.CMBCONSULTORIO.Size = New System.Drawing.Size(181, 21)
+        Me.CMBCONSULTORIO.Sorted = True
+        Me.CMBCONSULTORIO.TabIndex = 30
+        '
+        'CMBBUSQUEDA
+        '
+        Me.CMBBUSQUEDA.Enabled = False
+        Me.CMBBUSQUEDA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CMBBUSQUEDA.FormattingEnabled = True
+        Me.CMBBUSQUEDA.Location = New System.Drawing.Point(106, 483)
+        Me.CMBBUSQUEDA.Name = "CMBBUSQUEDA"
+        Me.CMBBUSQUEDA.Size = New System.Drawing.Size(189, 21)
+        Me.CMBBUSQUEDA.TabIndex = 31
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label11.Location = New System.Drawing.Point(103, 463)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(124, 17)
+        Me.Label11.TabIndex = 32
+        Me.Label11.Text = "Tipo de Busqueda"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label12.Location = New System.Drawing.Point(104, 340)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(148, 17)
+        Me.Label12.TabIndex = 33
+        Me.Label12.Text = "Empleado que Solicita"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'TXTNOMBREEMPLEADO
+        '
+        Me.TXTNOMBREEMPLEADO.Location = New System.Drawing.Point(106, 360)
+        Me.TXTNOMBREEMPLEADO.Name = "TXTNOMBREEMPLEADO"
+        Me.TXTNOMBREEMPLEADO.Size = New System.Drawing.Size(182, 20)
+        Me.TXTNOMBREEMPLEADO.TabIndex = 36
+        '
+        'TXTIDENTIDAD
+        '
+        Me.TXTIDENTIDAD.BackColor = System.Drawing.Color.White
+        Me.TXTIDENTIDAD.Location = New System.Drawing.Point(0, 87)
+        Me.TXTIDENTIDAD.Name = "TXTIDENTIDAD"
+        Me.TXTIDENTIDAD.Size = New System.Drawing.Size(108, 20)
+        Me.TXTIDENTIDAD.TabIndex = 37
+        Me.TXTIDENTIDAD.Visible = False
+        '
         'SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(685, 617)
+        Me.ClientSize = New System.Drawing.Size(691, 723)
+        Me.Controls.Add(Me.TXTIDENTIDAD)
+        Me.Controls.Add(Me.TXTNOMBREEMPLEADO)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.CMBBUSQUEDA)
+        Me.Controls.Add(Me.CMBCONSULTORIO)
+        Me.Controls.Add(Me.TXTCOD_ESPECIALIDAD)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.TXTNOMBREMEDICO)
         Me.Controls.Add(Me.PictureBox4)
@@ -291,8 +350,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Controls.Add(Me.TXTPACIENTE)
         Me.Controls.Add(Me.BTNEXPEDIENTE)
         Me.Controls.Add(Me.TXTEXPEDIENTE)
-        Me.Controls.Add(Me.BTNCONSULTORIO)
-        Me.Controls.Add(Me.TXTCONSULTORIO)
         Me.Controls.Add(Me.BTNMEDICO)
         Me.Controls.Add(Me.TXTMEDICO)
         Me.Controls.Add(Me.Label9)
@@ -326,8 +383,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents Label9 As Label
     Friend WithEvents TXTMEDICO As TextBox
     Friend WithEvents BTNMEDICO As Button
-    Friend WithEvents TXTCONSULTORIO As TextBox
-    Friend WithEvents BTNCONSULTORIO As Button
     Friend WithEvents TXTEXPEDIENTE As TextBox
     Friend WithEvents BTNEXPEDIENTE As Button
     Friend WithEvents TXTPACIENTE As TextBox
@@ -337,4 +392,11 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents TXTNOMBREMEDICO As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents TXTCOD_ESPECIALIDAD As TextBox
+    Friend WithEvents CMBCONSULTORIO As ComboBox
+    Friend WithEvents CMBBUSQUEDA As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TXTNOMBREEMPLEADO As TextBox
+    Friend WithEvents TXTIDENTIDAD As TextBox
 End Class

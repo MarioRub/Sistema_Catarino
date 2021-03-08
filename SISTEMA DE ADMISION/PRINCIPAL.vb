@@ -1149,8 +1149,9 @@ Public Class PRINCIPAL
         End Try
         FORMULARIO = Nothing
         If CARGADO = False Then
-            'SOLICITUD_EXPEDIENTEARCHIVO.MdiParent = Me
+            SOLICITUD_EXPEDIENTEARCHIVO.TXTIDENTIDAD.Text = TXTIDENTIDAD.Text
             SOLICITUD_EXPEDIENTEARCHIVO.Show()
         End If
     End Sub
+
 End Class
