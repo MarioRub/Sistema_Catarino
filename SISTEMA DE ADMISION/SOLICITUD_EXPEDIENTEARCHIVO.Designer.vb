@@ -42,7 +42,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.CMBESPECIALIDAD = New System.Windows.Forms.ComboBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.TXTNOMBREMEDICO = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TXTCOD_ESPECIALIDAD = New System.Windows.Forms.TextBox()
         Me.CMBCONSULTORIO = New System.Windows.Forms.ComboBox()
@@ -51,6 +50,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TXTNOMBREEMPLEADO = New System.Windows.Forms.TextBox()
         Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
+        Me.CMBMEDICOS = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -244,13 +244,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.PictureBox4.TabIndex = 25
         Me.PictureBox4.TabStop = False
         '
-        'TXTNOMBREMEDICO
-        '
-        Me.TXTNOMBREMEDICO.Location = New System.Drawing.Point(350, 297)
-        Me.TXTNOMBREMEDICO.Name = "TXTNOMBREMEDICO"
-        Me.TXTNOMBREMEDICO.Size = New System.Drawing.Size(185, 20)
-        Me.TXTNOMBREMEDICO.TabIndex = 26
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -328,12 +321,23 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.TXTIDENTIDAD.TabIndex = 37
         Me.TXTIDENTIDAD.Visible = False
         '
+        'CMBMEDICOS
+        '
+        Me.CMBMEDICOS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
+        Me.CMBMEDICOS.FormattingEnabled = True
+        Me.CMBMEDICOS.Location = New System.Drawing.Point(350, 297)
+        Me.CMBMEDICOS.Name = "CMBMEDICOS"
+        Me.CMBMEDICOS.Size = New System.Drawing.Size(185, 21)
+        Me.CMBMEDICOS.Sorted = True
+        Me.CMBMEDICOS.TabIndex = 38
+        '
         'SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(691, 723)
+        Me.Controls.Add(Me.CMBMEDICOS)
         Me.Controls.Add(Me.TXTIDENTIDAD)
         Me.Controls.Add(Me.TXTNOMBREEMPLEADO)
         Me.Controls.Add(Me.Label12)
@@ -342,7 +346,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Controls.Add(Me.CMBCONSULTORIO)
         Me.Controls.Add(Me.TXTCOD_ESPECIALIDAD)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TXTNOMBREMEDICO)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.CMBESPECIALIDAD)
@@ -390,7 +393,6 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents CMBESPECIALIDAD As ComboBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents TXTNOMBREMEDICO As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TXTCOD_ESPECIALIDAD As TextBox
     Friend WithEvents CMBCONSULTORIO As ComboBox
@@ -399,4 +401,5 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents Label12 As Label
     Friend WithEvents TXTNOMBREEMPLEADO As TextBox
     Friend WithEvents TXTIDENTIDAD As TextBox
+    Friend WithEvents CMBMEDICOS As ComboBox
 End Class

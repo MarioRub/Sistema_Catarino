@@ -6,11 +6,12 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Private Sub SOLICITUD_EXPEDIENTEARCHIVO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TXTPACIENTE.Enabled = False
-        TXTNOMBREMEDICO.Enabled = False
         CMBPROCESOS.DropDownStyle = ComboBoxStyle.DropDownList
+        CMBMEDICOS.DropDownStyle = ComboBoxStyle.DropDownList
         CMBESPECIALIDAD.DropDownStyle = ComboBoxStyle.DropDownList
         CMBCONSULTORIO.DropDownStyle = ComboBoxStyle.DropDownList
         CMBBUSQUEDA.DropDownStyle = ComboBoxStyle.DropDownList
+        CMBMEDICOS.Enabled = False
         CMBBUSQUEDA.Enabled = True
         CMBPROCESOS.Items.Add("A")
         CMBPROCESOS.Items.Add("B")
@@ -34,6 +35,8 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                 TXTCOD_ESPECIALIDAD.Text = CMB.Tables(0).Rows(0)("CODIGO_ESPECIALIDAD")
             End With
         End If
+
+
 
     End Sub
 
@@ -69,7 +72,11 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         ADAPTADOR.Fill(DATO)
         Try
             If TXTMEDICO.Text <> "" Then
-                TXTNOMBREMEDICO.Text = DATO.Tables(0).Rows(0)("NOMBRE")
+                CMBMEDICOS.Enabled = True
+                With CMBMEDICOS
+                    .DataSource = DATO.Tables(0)
+                    .DisplayMember = "NOMBRE"
+                End With
             End If
         Catch ex As Exception
             MsgBox("NO SE HA ENCONTRADO AL MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
@@ -224,7 +231,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             MsgBox("POR FAVOR SELECCIONE UN PROCESO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBESPECIALIDAD.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UNA ESPECIALIDAD.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-        ElseIf TXTNOMBREMEDICO.Text = "" Then
+        ElseIf CMBMEDICOS.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UN MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf TXTNOMBREEMPLEADO.Text = "" Then
             MsgBox("INGRESE EL NOMBRE DEL EMPLEADO QUE RETIRA.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
@@ -239,7 +246,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             Dim ESTADO As String = ""
             Try
                 Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, FECHA_SALIDA) " _
-                & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & TXTNOMBREMEDICO.Text & "','" _
+                & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
                 & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
@@ -259,7 +266,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             Dim ESTADO As String = ""
             Try
                 Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, FECHA_SALIDA) " _
-                & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & TXTNOMBREMEDICO.Text & "','" _
+                & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
                 & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
@@ -274,5 +281,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
         End If
 
+    End Sub
+
+    Private Sub TXTNOMBREEMPLEADO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNOMBREEMPLEADO.KeyPress
+        e.KeyChar = Char.ToUpper(e.KeyChar)
     End Sub
 End Class
