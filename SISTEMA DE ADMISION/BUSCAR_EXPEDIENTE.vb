@@ -90,7 +90,7 @@ Public Class BUSCAR_EXPEDIENTE
     Sub IDENTIDAD()
         If CMBBUSQUEDA.Text = "IDENTIDAD" Then
             Dim ADAPTADOR As New SqlDataAdapter
-            Dim COMANDO As String = "SELECT IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+            Dim COMANDO As String = "SELECT ESTADO, IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD='" _
                                 & TXTEXPEDIENTE.Text & "'"
             Dim DATO As DataTable
@@ -100,6 +100,7 @@ Public Class BUSCAR_EXPEDIENTE
             Try
                 DGVGENERAL.DataSource = DATO
                 If DATO.Rows.Count > 0 Then
+                    DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("IDENTIDAD").Width = 130 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
@@ -111,6 +112,8 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                     'OTORGAR EL TITULO
 
+                    DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                    DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("IDENTIDAD").HeaderText = "IDENTIDAD"
                     DGVGENERAL.Columns("IDENTIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").HeaderText = "NOMBRE"
@@ -143,7 +146,7 @@ Public Class BUSCAR_EXPEDIENTE
             End Try
         ElseIf CMBBUSQUEDA.Text = "CORRELATIVO" Then
             Dim ADAPTADOR As New SqlDataAdapter
-            Dim COMANDO As String = "SELECT CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+            Dim COMANDO As String = "SELECT ESTADO, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO='" _
                                 & TXTEXPEDIENTE.Text & "'"
             Dim DATO As DataTable
@@ -153,6 +156,7 @@ Public Class BUSCAR_EXPEDIENTE
             Try
                 DGVGENERAL.DataSource = DATO
                 If DATO.Rows.Count > 0 Then
+                    DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("CORRELATIVO").Width = 130 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
@@ -164,6 +168,8 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                     'OTORGAR EL TITULO
 
+                    DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                    DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("CORRELATIVO").HeaderText = "CORRELATIVO"
                     DGVGENERAL.Columns("CORRELATIVO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").HeaderText = "NOMBRE"
@@ -199,7 +205,7 @@ Public Class BUSCAR_EXPEDIENTE
 
     Sub NOMBRE()
         Dim ADAPTADOR As New SqlDataAdapter
-        Dim COMANDO As String = "SELECT IDENTIDAD, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+        Dim COMANDO As String = "SELECT ESTADO, IDENTIDAD, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE NOMBRE_PACIENTE LIKE '" _
                                 & "%" & TXTNOMBREPACIENTE.Text & "%" & "'"
         Dim DATO As DataTable
@@ -209,6 +215,7 @@ Public Class BUSCAR_EXPEDIENTE
         Try
             DGVGENERAL.DataSource = DATO
             If DATO.Rows.Count > 0 Then
+                DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
                 DGVGENERAL.Columns("IDENTIDAD").Width = 130 'DAR ANCHO A LA COLUMNA
                 DGVGENERAL.Columns("CORRELATIVO").Width = 130 'DAR ANCHO A LA COLUMNA
                 DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
@@ -221,6 +228,8 @@ Public Class BUSCAR_EXPEDIENTE
                 DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                 'OTORGAR EL TITULO
 
+                DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.Columns("IDENTIDAD").HeaderText = "IDENTIDAD"
                 DGVGENERAL.Columns("IDENTIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.Columns("CORRELATIVO").HeaderText = "CORRELATIVO"
