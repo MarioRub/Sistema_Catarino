@@ -66,11 +66,11 @@ Public Class BUSCAR_EXPEDIENTE
         If CBIDENTIDAD.Checked = True Then
             BTNBUSCAR.Enabled = True
             CBNOMBRE.Checked = False
-            TXTNOMBREPACIENTE.Enabled = False
-            CMBBUSQUEDA.SelectedIndex = 0
-            CMBBUSQUEDA.Enabled = True
-            TXTNOMBREPACIENTE.Text = ""
             TXTEXPEDIENTE.Text = ""
+            TXTNOMBREPACIENTE.Text = ""
+            TXTNOMBREPACIENTE.Enabled = False
+            CMBBUSQUEDA.Enabled = True
+
         End If
     End Sub
 
@@ -78,12 +78,12 @@ Public Class BUSCAR_EXPEDIENTE
         If CBNOMBRE.Checked = True Then
             BTNBUSCAR.Enabled = True
             CBIDENTIDAD.Checked = False
-            TXTEXPEDIENTE.Enabled = False
             TXTEXPEDIENTE.Text = ""
             TXTNOMBREPACIENTE.Text = ""
-            CMBBUSQUEDA.SelectedIndex = 0
-            TXTNOMBREPACIENTE.Enabled = True
+            TXTEXPEDIENTE.Enabled = False
             CMBBUSQUEDA.Enabled = False
+            TXTNOMBREPACIENTE.Enabled = True
+
         End If
     End Sub
 
@@ -104,10 +104,10 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("CONSULTORIO").Width = 50 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("PROCESO").Width = 50 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("USUARIO").Width = 150 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                     'OTORGAR EL TITULO
 
@@ -123,6 +123,8 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
                     DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
                     DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
@@ -155,10 +157,10 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
                     DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("CONSULTORIO").Width = 50 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("PROCESO").Width = 50 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
-                    DGVGENERAL.Columns("USUARIO").Width = 150 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
                     DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                     'OTORGAR EL TITULO
 
@@ -174,6 +176,8 @@ Public Class BUSCAR_EXPEDIENTE
                     DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
                     DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
                     DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
@@ -210,10 +214,10 @@ Public Class BUSCAR_EXPEDIENTE
                 DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
                 DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
                 DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
-                DGVGENERAL.Columns("CONSULTORIO").Width = 50 'DAR ANCHO A LA COLUMNA
-                DGVGENERAL.Columns("PROCESO").Width = 50 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
                 DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
-                DGVGENERAL.Columns("USUARIO").Width = 150 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
                 DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
                 'OTORGAR EL TITULO
 
@@ -231,6 +235,8 @@ Public Class BUSCAR_EXPEDIENTE
                 DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
                 DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
                 DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
