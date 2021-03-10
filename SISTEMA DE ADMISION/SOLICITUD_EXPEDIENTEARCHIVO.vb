@@ -239,15 +239,22 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             MsgBox("INGRESE EL NOMBRE DEL PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         End If
 
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT USUARIO FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim DATO As DataSet
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
+        DATO = New DataSet
+        ADAPTADOR.Fill(DATO)
+
         Dim FECHA As Date = Date.Now
         If CMBBUSQUEDA.Text = "IDENTIDAD" Then
 
             CONE.Open()
             Dim ESTADO As String = ""
             Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, FECHA_SALIDA) " _
+                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                 COMAND.ExecuteNonQuery()
@@ -265,9 +272,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             CONE.Open()
             Dim ESTADO As String = ""
             Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, FECHA_SALIDA) " _
+                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                 COMAND.ExecuteNonQuery()
