@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Public Class ELIMINAR_CITA
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Sub BUSQUEDA_IDENTIDAD()
         Dim ADAPTADOR As New SqlDataAdapter
         Dim COMANDO As String = "SELECT LOGIN.USUARIO ,NOMBRE_PACIENTE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, CORRELATIVO, ESPECIALIDAD, MEDICO, CONSULTORIO, PREFERENTE, NORMAL, FECHA_FICHA, FECHA_CITADO, HORA_INCLUSION, NUEVA, SUBSIGUIENTE, REPROGRAMACION, CAMBIO_CITA FROM BITACORA INNER JOIN LOGIN ON BITACORA.IDENTIDAD_EMPLEADO=LOGIN.IDENTIDAD WHERE BITACORA.IDENTIDAD='" & TXTIDENTIDAD.Text & "'"

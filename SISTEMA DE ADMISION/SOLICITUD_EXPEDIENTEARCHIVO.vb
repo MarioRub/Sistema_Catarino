@@ -2,8 +2,8 @@
 
 Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Private Sub SOLICITUD_EXPEDIENTEARCHIVO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TXTPACIENTE.Enabled = False
         CMBPROCESOS.DropDownStyle = ComboBoxStyle.DropDownList
@@ -252,9 +252,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             CONE.Open()
             Dim ESTADO As String = ""
             Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, FECHA_SALIDA) " _
+                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                 COMAND.ExecuteNonQuery()
@@ -272,9 +272,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             CONE.Open()
             Dim ESTADO As String = ""
             Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, FECHA_SALIDA) " _
+                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
                 Dim COMAND As SqlCommand
                 COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                 COMAND.ExecuteNonQuery()
