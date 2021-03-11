@@ -440,4 +440,5 @@ Public Class BUSCAR_MEDICO
     Private Sub TXTCOD_ESPECIALIDAD_TextChanged(sender As Object, e As EventArgs) Handles TXTCOD_ESPECIALIDAD.TextChanged
 
     End Sub
+
 End Class

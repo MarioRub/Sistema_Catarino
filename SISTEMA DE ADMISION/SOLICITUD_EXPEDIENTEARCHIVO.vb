@@ -4,6 +4,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
     Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
     Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public ESTADO As Boolean = False
     Private Sub SOLICITUD_EXPEDIENTEARCHIVO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TXTPACIENTE.Enabled = False
         CMBPROCESOS.DropDownStyle = ComboBoxStyle.DropDownList
@@ -86,6 +87,25 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     End Sub
 
     Private Sub BTNEXPEDIENTE_Click(sender As Object, e As EventArgs) Handles BTNEXPEDIENTE.Click
+
+        Dim ADAPTADOR2 As New SqlDataAdapter
+        Dim COMANDO2 As String = "SELECT ESTADO FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim DATO2 As DataSet
+        ADAPTADOR2 = New SqlDataAdapter(COMANDO2, CONEXION)
+        DATO2 = New DataSet
+        ADAPTADOR2.Fill(DATO2)
+
+        For Each row As DataRow In DATO2.Tables(0).Rows
+            If row("ESTADO").ToString() = "PRESTADO" Then
+                ESTADO = True
+                Exit For
+            Else
+                ESTADO = False
+            End If
+        Next
+
+
+
         If CMBBUSQUEDA.Text = "IDENTIDAD" Then
             Dim ADAPTADOR As New SqlDataAdapter
             Dim COMANDO As String = "SELECT NOMBRE_PACIENTE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, " _
@@ -102,6 +122,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                     TXTPACIENTE.Text = DATO.Tables(0).Rows(0)("NOMBRE_PACIENTE") + " " + DATO.Tables(0).Rows(0)("PRIMER_APELLIDO")
                 End If
             Catch ex As Exception
+                TXTEXPEDIENTE.Text = ""
                 MsgBox("NO SE HA ENCONTRADO AL PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
             End Try
             ADAPTADOR.Dispose()
@@ -123,7 +144,8 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                     TXTPACIENTE.Text = DATO.Tables(0).Rows(0)("NOMBRE_PACIENTE") + " " + DATO.Tables(0).Rows(0)("PRIMER_APELLIDO")
                 End If
             Catch ex As Exception
-                MsgBox(ex.Message)
+                TXTEXPEDIENTE.Text = ""
+                MsgBox("NO SE HA ENCONTRADO AL PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
             End Try
             ADAPTADOR.Dispose()
             DATO.Dispose()
@@ -227,6 +249,14 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     End Sub
 
     Private Sub BTNCONFIRMAR_Click(sender As Object, e As EventArgs) Handles BTNCONFIRMAR.Click
+
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT USUARIO FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim DATO As DataSet
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
+        DATO = New DataSet
+        ADAPTADOR.Fill(DATO)
+
         If CMBPROCESOS.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UN PROCESO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBESPECIALIDAD.Text = "" Then
@@ -236,56 +266,51 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         ElseIf TXTNOMBREEMPLEADO.Text = "" Then
             MsgBox("INGRESE EL NOMBRE DEL EMPLEADO QUE RETIRA.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf TXTPACIENTE.Text = "" Then
-            MsgBox("INGRESE EL NOMBRE DEL PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-        End If
+            MsgBox("INGRESE LA IDENTIDAD O CORRELATIVO DE UN PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+        ElseIf ESTADO = True Then
+            MsgBox("EL EXPEDIENTE SE ENCUENTRA PRESTADO ACTUALMENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+        ElseIf ESTADO = False Then
+            Dim FECHA As Date = Date.Now
+            If CMBBUSQUEDA.Text = "IDENTIDAD" Then
 
-        Dim ADAPTADOR As New SqlDataAdapter
-        Dim COMANDO As String = "SELECT USUARIO FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
-        Dim DATO As DataSet
-        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
-        DATO = New DataSet
-        ADAPTADOR.Fill(DATO)
-
-        Dim FECHA As Date = Date.Now
-        If CMBBUSQUEDA.Text = "IDENTIDAD" Then
-
-            CONE.Open()
-            Dim ESTADO As String = ""
-            Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                CONE.Open()
+                Dim ESTADO As String = ""
+                Try
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
                 & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
-                Dim COMAND As SqlCommand
-                COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
-                COMAND.ExecuteNonQuery()
-                MsgBox("REGISTRO GUARDADO CON EXITO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-                CONE.Close()
-                Me.Close()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-                CONE.Close()
-            End Try
+                    Dim COMAND As SqlCommand
+                    COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
+                    COMAND.ExecuteNonQuery()
+                    MsgBox("REGISTRO GUARDADO CON EXITO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+                    CONE.Close()
+                    Me.Close()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                    CONE.Close()
+                End Try
 
-        End If
-        If CMBBUSQUEDA.Text = "CORRELATIVO" Then
+            End If
+            If CMBBUSQUEDA.Text = "CORRELATIVO" Then
 
-            CONE.Open()
-            Dim ESTADO As String = ""
-            Try
-                Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
-                & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
-                Dim COMAND As SqlCommand
-                COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
-                COMAND.ExecuteNonQuery()
-                MsgBox("REGISTRO GUARDADO CON EXITO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-                CONE.Close()
-                Me.Close()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-                CONE.Close()
-            End Try
+                CONE.Open()
+                Dim ESTADO As String = ""
+                Try
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                    & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
+                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                    Dim COMAND As SqlCommand
+                    COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
+                    COMAND.ExecuteNonQuery()
+                    MsgBox("REGISTRO GUARDADO CON EXITO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+                    CONE.Close()
+                    Me.Close()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                    CONE.Close()
+                End Try
 
+            End If
         End If
 
     End Sub
