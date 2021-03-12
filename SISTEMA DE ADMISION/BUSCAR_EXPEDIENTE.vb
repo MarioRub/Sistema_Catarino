@@ -2,8 +2,8 @@
 
 Public Class BUSCAR_EXPEDIENTE
 
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
 
     Private Sub BUSCAR_EXPEDIENTE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CMBBUSQUEDA.DropDownStyle = ComboBoxStyle.DropDownList
@@ -203,6 +203,122 @@ Public Class BUSCAR_EXPEDIENTE
         End If
     End Sub
 
+    Sub IDENTIDAD_UNICO()
+        If CMBBUSQUEDA.Text = "IDENTIDAD" Then
+            Dim ADAPTADOR As New SqlDataAdapter
+            Dim COMANDO As String = "SELECT TOP 1 ESTADO, IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+                                & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD='" _
+                                & TXTEXPEDIENTE.Text & "'" & " ORDER BY NO DESC"
+            Dim DATO As DataTable
+            ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
+            DATO = New DataTable
+            ADAPTADOR.Fill(DATO)
+            Try
+                DGVGENERAL.DataSource = DATO
+                If DATO.Rows.Count > 0 Then
+                    DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("IDENTIDAD").Width = 130 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
+                    DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
+                    DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
+                    'OTORGAR EL TITULO
+
+                    DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                    DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("IDENTIDAD").HeaderText = "IDENTIDAD"
+                    DGVGENERAL.Columns("IDENTIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").HeaderText = "NOMBRE"
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("MEDICO").HeaderText = "MEDICO"
+                    DGVGENERAL.Columns("MEDICO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("ESPECIALIDAD").HeaderText = "ESPECIALIDAD"
+                    DGVGENERAL.Columns("ESPECIALIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("CONSULTORIO").HeaderText = "CONSULTORIO"
+                    DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
+                    DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
+                    DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
+                    DGVGENERAL.Columns("FECHA_SALIDA").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    Dim DGV As New DataGridViewCellStyle()
+                    DGV.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.ColumnHeadersDefaultCellStyle = DGV 'PONER CENTRADO EL ENCABEZADO
+                ElseIf DATO.Rows.Count = 0 Then
+                    MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+                    TXTEXPEDIENTE.Text = ""
+                    CBIDENTIDAD.Checked = False
+                    CBNOMBRE.Checked = False
+                End If
+            Catch ex As Exception
+                MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
+            End Try
+        ElseIf CMBBUSQUEDA.Text = "CORRELATIVO" Then
+            Dim ADAPTADOR As New SqlDataAdapter
+            Dim COMANDO As String = "SELECT TOP 1 ESTADO, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+                                & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO='" _
+                                & TXTEXPEDIENTE.Text & "'" & " ORDER BY NO DESC"
+            Dim DATO As DataTable
+            ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
+            DATO = New DataTable
+            ADAPTADOR.Fill(DATO)
+            Try
+                DGVGENERAL.DataSource = DATO
+                If DATO.Rows.Count > 0 Then
+                    DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("CORRELATIVO").Width = 130 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
+                    DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
+                    DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
+                    DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
+                    'OTORGAR EL TITULO
+
+                    DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                    DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("CORRELATIVO").HeaderText = "CORRELATIVO"
+                    DGVGENERAL.Columns("CORRELATIVO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").HeaderText = "NOMBRE"
+                    DGVGENERAL.Columns("NOMBRE_PACIENTE").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("MEDICO").HeaderText = "MEDICO"
+                    DGVGENERAL.Columns("MEDICO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("ESPECIALIDAD").HeaderText = "ESPECIALIDAD"
+                    DGVGENERAL.Columns("ESPECIALIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("CONSULTORIO").HeaderText = "CONSULTORIO"
+                    DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
+                    DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                    DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
+                    DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
+                    DGVGENERAL.Columns("FECHA_SALIDA").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    Dim DGV As New DataGridViewCellStyle()
+                    DGV.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DGVGENERAL.ColumnHeadersDefaultCellStyle = DGV 'PONER CENTRADO EL ENCABEZADO
+                ElseIf DATO.Rows.Count = 0 Then
+                    MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+                    TXTEXPEDIENTE.Text = ""
+                    CBIDENTIDAD.Checked = False
+                    CBNOMBRE.Checked = False
+                End If
+            Catch ex As Exception
+                MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
+            End Try
+        End If
+    End Sub
+
     Sub NOMBRE()
         Dim ADAPTADOR As New SqlDataAdapter
         Dim COMANDO As String = "SELECT ESTADO, IDENTIDAD, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
@@ -254,10 +370,73 @@ Public Class BUSCAR_EXPEDIENTE
                 DGV.Alignment = DataGridViewContentAlignment.MiddleCenter
                 DGVGENERAL.ColumnHeadersDefaultCellStyle = DGV 'PONER CENTRADO EL ENCABEZADO
             ElseIf DATO.Rows.Count = 0 Then
-                MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+                TXTNOMBREPACIENTE.Text = ""
                 TXTEXPEDIENTE.Text = ""
                 CBIDENTIDAD.Checked = False
                 CBNOMBRE.Checked = False
+                MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+            End If
+        Catch ex As Exception
+            MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
+        End Try
+    End Sub
+
+    Sub NOMBRE_UNICO()
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT TOP 1 ESTADO, IDENTIDAD, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, " _
+                                & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA FROM SOLICITUD_EXPEDIENTE WHERE NOMBRE_PACIENTE LIKE '" _
+                                & "%" & TXTNOMBREPACIENTE.Text & "%" & "'" & " ORDER BY NO DESC"
+        Dim DATO As DataTable
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
+        DATO = New DataTable
+        ADAPTADOR.Fill(DATO)
+        Try
+            DGVGENERAL.DataSource = DATO
+            If DATO.Rows.Count > 0 Then
+                DGVGENERAL.Columns("ESTADO").Width = 110 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("IDENTIDAD").Width = 130 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("CORRELATIVO").Width = 130 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("NOMBRE_PACIENTE").Width = 180 'DAR ANCGO A LA COLUMNA
+                DGVGENERAL.Columns("MEDICO").Width = 180 'DAR ANCGO A LA COLUMNA
+                DGVGENERAL.Columns("ESPECIALIDAD").Width = 120 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("CONSULTORIO").Width = 110 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("PROCESO").Width = 80 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("NOMBRE_EMPLEADO").Width = 150 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("USUARIO").Width = 180 'DAR ANCHO A LA COLUMNA
+                DGVGENERAL.Columns("FECHA_SALIDA").Width = 150 'DAR ANCHO A LA COLUMNA
+                'OTORGAR EL TITULO
+
+                DGVGENERAL.Columns("ESTADO").HeaderText = "ESTADO"
+                DGVGENERAL.Columns("ESTADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("IDENTIDAD").HeaderText = "IDENTIDAD"
+                DGVGENERAL.Columns("IDENTIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("CORRELATIVO").HeaderText = "CORRELATIVO"
+                DGVGENERAL.Columns("CORRELATIVO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("NOMBRE_PACIENTE").HeaderText = "NOMBRE"
+                DGVGENERAL.Columns("NOMBRE_PACIENTE").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("MEDICO").HeaderText = "MEDICO"
+                DGVGENERAL.Columns("MEDICO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("ESPECIALIDAD").HeaderText = "ESPECIALIDAD"
+                DGVGENERAL.Columns("ESPECIALIDAD").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("CONSULTORIO").HeaderText = "CONSULTORIO"
+                DGVGENERAL.Columns("CONSULTORIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("PROCESO").HeaderText = "PROCESOS"
+                DGVGENERAL.Columns("PROCESO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("NOMBRE_EMPLEADO").HeaderText = "NOMBRE EMPLEADO"
+                DGVGENERAL.Columns("NOMBRE_EMPLEADO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("USUARIO").HeaderText = "USUARIO"
+                DGVGENERAL.Columns("USUARIO").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.Columns("FECHA_SALIDA").HeaderText = "FECHA SALIDA"
+                DGVGENERAL.Columns("FECHA_SALIDA").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                Dim DGV As New DataGridViewCellStyle()
+                DGV.Alignment = DataGridViewContentAlignment.MiddleCenter
+                DGVGENERAL.ColumnHeadersDefaultCellStyle = DGV 'PONER CENTRADO EL ENCABEZADO
+            ElseIf DATO.Rows.Count = 0 Then
+                TXTNOMBREPACIENTE.Text = ""
+                TXTEXPEDIENTE.Text = ""
+                CBIDENTIDAD.Checked = False
+                CBNOMBRE.Checked = False
+                MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
             End If
         Catch ex As Exception
             MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
@@ -291,11 +470,20 @@ Public Class BUSCAR_EXPEDIENTE
     End Sub
 
     Private Sub BTNBUSCAR_Click(sender As Object, e As EventArgs) Handles BTNBUSCAR.Click
-        If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
-            IDENTIDAD()
-        ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
-            NOMBRE()
+        If CHKHISTORIAL.Checked = True Then
+            If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
+                IDENTIDAD()
+            ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
+                NOMBRE()
 
+            End If
+        Else
+            If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
+                IDENTIDAD_UNICO()
+            ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
+                NOMBRE_UNICO()
+
+            End If
         End If
     End Sub
 
