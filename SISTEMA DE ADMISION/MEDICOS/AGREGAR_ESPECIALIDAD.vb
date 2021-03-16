@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Public Class AGREGAR_ESPECIALIDAD
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
     Private Sub AGREGAR_ESPECIALIDAD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             CONE.Open()

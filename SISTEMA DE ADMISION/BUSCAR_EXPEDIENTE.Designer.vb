@@ -39,6 +39,7 @@ Partial Class BUSCAR_EXPEDIENTE
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CBNOMBRE = New System.Windows.Forms.RadioButton()
         Me.CBIDENTIDAD = New System.Windows.Forms.RadioButton()
+        Me.CHKHISTORIAL = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVGENERAL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,12 +214,23 @@ Partial Class BUSCAR_EXPEDIENTE
         Me.CBIDENTIDAD.Text = "IDENTIDAD"
         Me.CBIDENTIDAD.UseVisualStyleBackColor = True
         '
+        'CHKHISTORIAL
+        '
+        Me.CHKHISTORIAL.AutoSize = True
+        Me.CHKHISTORIAL.Location = New System.Drawing.Point(587, 149)
+        Me.CHKHISTORIAL.Name = "CHKHISTORIAL"
+        Me.CHKHISTORIAL.Size = New System.Drawing.Size(148, 17)
+        Me.CHKHISTORIAL.TabIndex = 151
+        Me.CHKHISTORIAL.Text = "Mostrar Historial Completo"
+        Me.CHKHISTORIAL.UseVisualStyleBackColor = True
+        '
         'BUSCAR_EXPEDIENTE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(1076, 526)
+        Me.Controls.Add(Me.CHKHISTORIAL)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TXTNOMBREPACIENTE)
         Me.Controls.Add(Me.Label1)
@@ -259,4 +271,5 @@ Partial Class BUSCAR_EXPEDIENTE
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CBNOMBRE As RadioButton
     Friend WithEvents CBIDENTIDAD As RadioButton
+    Friend WithEvents CHKHISTORIAL As CheckBox
 End Class
