@@ -553,6 +553,12 @@
       <DependentUpon>RP_HOSPITALIZACION.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RETORNO_EXPEDIENTE.Designer.vb">
+      <DependentUpon>RETORNO_EXPEDIENTE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RETORNO_EXPEDIENTE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SOLICITUD_EXPEDIENTEARCHIVO.Designer.vb">
       <DependentUpon>SOLICITUD_EXPEDIENTEARCHIVO.vb</DependentUpon>
     </Compile>
@@ -779,6 +785,9 @@
     <EmbeddedResource Include="REPORTES\RP_HOSPITALIZACION.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RP_HOSPITALIZACION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RETORNO_EXPEDIENTE.resx">
+      <DependentUpon>RETORNO_EXPEDIENTE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SOLICITUD_EXPEDIENTEARCHIVO.resx">
       <DependentUpon>SOLICITUD_EXPEDIENTEARCHIVO.vb</DependentUpon>

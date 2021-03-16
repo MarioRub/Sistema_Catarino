@@ -49,6 +49,7 @@ Partial Class PRINCIPAL
         Me.REIMPRIMIREXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AGREGARFERENCIAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SOLICITUDEXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BUSCAREXPEDIENTEToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EMERGENCIAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IMPRONTOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NUEVOToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -122,7 +123,7 @@ Partial Class PRINCIPAL
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
-        Me.BUSCAREXPEDIENTEToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RETORNAREXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -210,7 +211,7 @@ Partial Class PRINCIPAL
         '
         'CONSULTAEXTERNAToolStripMenuItem
         '
-        Me.CONSULTAEXTERNAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HOSPITALIZACIONToolStripMenuItem, Me.DICTAMENToolStripMenuItem, Me.CERTIFICACIONDENACIMIENTOToolStripMenuItem, Me.CERTIFICACIONDEDEFUNCIONToolStripMenuItem, Me.CITASToolStripMenuItem, Me.AGREGARFERENCIAToolStripMenuItem, Me.SOLICITUDEXPEDIENTEToolStripMenuItem, Me.BUSCAREXPEDIENTEToolStripMenuItem1})
+        Me.CONSULTAEXTERNAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HOSPITALIZACIONToolStripMenuItem, Me.DICTAMENToolStripMenuItem, Me.CERTIFICACIONDENACIMIENTOToolStripMenuItem, Me.CERTIFICACIONDEDEFUNCIONToolStripMenuItem, Me.CITASToolStripMenuItem, Me.AGREGARFERENCIAToolStripMenuItem, Me.SOLICITUDEXPEDIENTEToolStripMenuItem, Me.BUSCAREXPEDIENTEToolStripMenuItem1, Me.RETORNAREXPEDIENTEToolStripMenuItem})
         Me.CONSULTAEXTERNAToolStripMenuItem.Image = CType(resources.GetObject("CONSULTAEXTERNAToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CONSULTAEXTERNAToolStripMenuItem.Name = "CONSULTAEXTERNAToolStripMenuItem"
         Me.CONSULTAEXTERNAToolStripMenuItem.Size = New System.Drawing.Size(145, 43)
@@ -289,6 +290,12 @@ Partial Class PRINCIPAL
         Me.SOLICITUDEXPEDIENTEToolStripMenuItem.Name = "SOLICITUDEXPEDIENTEToolStripMenuItem"
         Me.SOLICITUDEXPEDIENTEToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.SOLICITUDEXPEDIENTEToolStripMenuItem.Text = "SOLICITUD EXPEDIENTE"
+        '
+        'BUSCAREXPEDIENTEToolStripMenuItem1
+        '
+        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Name = "BUSCAREXPEDIENTEToolStripMenuItem1"
+        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Size = New System.Drawing.Size(248, 22)
+        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Text = "BUSCAR EXPEDIENTE"
         '
         'EMERGENCIAToolStripMenuItem
         '
@@ -768,11 +775,11 @@ Partial Class PRINCIPAL
         Me.TXTIDENTIDAD.TabIndex = 9
         Me.TXTIDENTIDAD.Visible = False
         '
-        'BUSCAREXPEDIENTEToolStripMenuItem1
+        'RETORNAREXPEDIENTEToolStripMenuItem
         '
-        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Name = "BUSCAREXPEDIENTEToolStripMenuItem1"
-        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Size = New System.Drawing.Size(248, 22)
-        Me.BUSCAREXPEDIENTEToolStripMenuItem1.Text = "BUSCAR EXPEDIENTE"
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Name = "RETORNAREXPEDIENTEToolStripMenuItem"
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Text = "RETORNAR EXPEDIENTE"
         '
         'PRINCIPAL
         '
@@ -902,4 +909,5 @@ Partial Class PRINCIPAL
     Friend WithEvents VACACIONESToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SOLICITUDEXPEDIENTEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BUSCAREXPEDIENTEToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents RETORNAREXPEDIENTEToolStripMenuItem As ToolStripMenuItem
 End Class
