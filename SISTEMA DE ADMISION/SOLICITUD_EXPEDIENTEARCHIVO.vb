@@ -7,16 +7,12 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     Public ESTADO As Boolean = False
     Private Sub SOLICITUD_EXPEDIENTEARCHIVO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TXTPACIENTE.Enabled = False
-        CMBPROCESOS.DropDownStyle = ComboBoxStyle.DropDownList
         CMBMEDICOS.DropDownStyle = ComboBoxStyle.DropDownList
         CMBESPECIALIDAD.DropDownStyle = ComboBoxStyle.DropDownList
         CMBCONSULTORIO.DropDownStyle = ComboBoxStyle.DropDownList
         CMBBUSQUEDA.DropDownStyle = ComboBoxStyle.DropDownList
         CMBMEDICOS.Enabled = False
         CMBBUSQUEDA.Enabled = True
-        CMBPROCESOS.Items.Add("A")
-        CMBPROCESOS.Items.Add("B")
-        CMBPROCESOS.Items.Add("C")
         CMBBUSQUEDA.Items.Add("IDENTIDAD")
         CMBBUSQUEDA.Items.Add("CORRELATIVO")
 
@@ -257,9 +253,8 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         DATO = New DataSet
         ADAPTADOR.Fill(DATO)
 
-        If CMBPROCESOS.Text = "" Then
-            MsgBox("POR FAVOR SELECCIONE UN PROCESO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-        ElseIf CMBESPECIALIDAD.Text = "" Then
+
+        If CMBESPECIALIDAD.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UNA ESPECIALIDAD.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBMEDICOS.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UN MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
@@ -276,9 +271,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
@@ -296,9 +291,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, PROCESO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                     & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBPROCESOS.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
