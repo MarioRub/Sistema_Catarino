@@ -2,8 +2,8 @@
 Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Public Class PRINCIPAL
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Cree una nueva instancia del formulario secundario.
@@ -1215,6 +1215,38 @@ Public Class PRINCIPAL
         FORMULARIO = Nothing
         If CARGADO = False Then
             RETORNO_EXPEDIENTE.Show()
+        End If
+    End Sub
+
+    Private Sub DICTAMENMEDICOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DICTAMENMEDICOToolStripMenuItem.Click
+        Dim FORMULARIO As Form
+        Dim CARGADO As Boolean
+        CARGADO = False
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT USUARIO,ESTADO, DEPARTAMENTO, ESTATUS FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim DATO As DataSet
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
+        Try
+            DATO = New DataSet
+            ADAPTADOR.Fill(DATO, "LOGIN")
+            For Each FORMULARIO In Me.MdiChildren
+                If DATO.Tables(0).Rows(0)("ESTATUS") = "ON" Then
+                    If FORMULARIO.Name = "DICTAMEN_MEDICO" Then
+                        CARGADO = True
+                        MsgBox("EL FORMULARIO DE EXPEDIENTES YA ESTA ABIERTO POR EL USUARIO: " & Chr(13) & DATO.Tables(0).Rows(0)("USUARIO"), MsgBoxStyle.Critical, "AVISO DEL SISTEMA")
+                        Exit For
+                    End If
+                End If
+            Next FORMULARIO
+            ADAPTADOR.Dispose()
+            DATO.Dispose()
+        Catch ex As Exception
+            'MsgBox(ex.Message)
+            MsgBox("EL USUARIO NO EXISTE")
+        End Try
+        FORMULARIO = Nothing
+        If CARGADO = False Then
+            DICTAMEN_MEDICO.Show()
         End If
     End Sub
 End Class

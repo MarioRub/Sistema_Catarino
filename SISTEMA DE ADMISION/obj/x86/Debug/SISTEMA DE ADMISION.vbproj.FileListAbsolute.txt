@@ -1043,3 +1043,4 @@ C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.exe
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.xml
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.pdb
+C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.DICTAMEN_MEDICO.resources
