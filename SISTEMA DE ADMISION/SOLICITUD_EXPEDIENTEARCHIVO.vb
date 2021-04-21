@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 
 Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
@@ -68,12 +69,14 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         DATO = New DataSet
         ADAPTADOR.Fill(DATO)
         Try
-            If TXTMEDICO.Text <> "" Then
-                CMBMEDICOS.Enabled = True
+            If DATO.Tables(0).Rows.Count = 0 Then
+                MsgBox("NO SE HA ENCONTRADO AL MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+            ElseIf TXTMEDICO.Text <> "" Then
                 With CMBMEDICOS
                     .DataSource = DATO.Tables(0)
                     .DisplayMember = "NOMBRE"
                 End With
+                CMBMEDICOS.Enabled = True
             End If
         Catch ex As Exception
             MsgBox("NO SE HA ENCONTRADO AL MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
@@ -257,12 +260,19 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         If CMBESPECIALIDAD.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UNA ESPECIALIDAD.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBMEDICOS.Text = "" Then
+            ErrorProvider1.Clear()
+            ErrorProvider1.SetError(CMBMEDICOS, "Seleccione una Medico")
             MsgBox("POR FAVOR SELECCIONE UN MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf TXTNOMBREEMPLEADO.Text = "" Then
+            ErrorProvider1.Clear()
+            ErrorProvider1.SetError(TXTNOMBREEMPLEADO, "Seleccione una Medico")
             MsgBox("INGRESE EL NOMBRE DEL EMPLEADO QUE RETIRA.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf TXTPACIENTE.Text = "" Then
+            ErrorProvider1.Clear()
+            ErrorProvider1.SetError(TXTPACIENTE, "Seleccione una Medico")
             MsgBox("INGRESE LA IDENTIDAD O CORRELATIVO DE UN PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf ESTADO = True Then
+            ErrorProvider1.Clear()
             MsgBox("EL EXPEDIENTE SE ENCUENTRA PRESTADO ACTUALMENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf ESTADO = False Then
             Dim FECHA As Date = Date.Now
@@ -313,4 +323,5 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     Private Sub TXTNOMBREEMPLEADO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNOMBREEMPLEADO.KeyPress
         e.KeyChar = Char.ToUpper(e.KeyChar)
     End Sub
+
 End Class

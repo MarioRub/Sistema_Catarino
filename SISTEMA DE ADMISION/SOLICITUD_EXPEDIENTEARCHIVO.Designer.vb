@@ -22,6 +22,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SOLICITUD_EXPEDIENTEARCHIVO))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,8 +50,10 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.TXTNOMBREEMPLEADO = New System.Windows.Forms.TextBox()
         Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
         Me.CMBMEDICOS = New System.Windows.Forms.ComboBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -310,6 +313,10 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.CMBMEDICOS.Sorted = True
         Me.CMBMEDICOS.TabIndex = 38
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -343,9 +350,11 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Name = "SOLICITUD_EXPEDIENTEARCHIVO"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SOLICITUD_EXPEDIENTEARCHIVO"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -377,4 +386,5 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents TXTNOMBREEMPLEADO As TextBox
     Friend WithEvents TXTIDENTIDAD As TextBox
     Friend WithEvents CMBMEDICOS As ComboBox
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
