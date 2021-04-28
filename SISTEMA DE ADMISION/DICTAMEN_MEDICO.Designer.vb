@@ -22,6 +22,7 @@ Partial Class DICTAMEN_MEDICO
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DICTAMEN_MEDICO))
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -49,8 +50,6 @@ Partial Class DICTAMEN_MEDICO
         Me.TXTNOMBRE = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.DTPINGRESO = New System.Windows.Forms.DateTimePicker()
-        Me.DTPEGRESO = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TXTSERVICIO = New System.Windows.Forms.TextBox()
@@ -70,8 +69,14 @@ Partial Class DICTAMEN_MEDICO
         Me.Label24 = New System.Windows.Forms.Label()
         Me.CMBBUSQUEDA = New System.Windows.Forms.ComboBox()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
+        Me.BTNGUARDAR = New System.Windows.Forms.Button()
+        Me.BTNCANCELAR = New System.Windows.Forms.Button()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.DTPINGRESO = New System.Windows.Forms.DateTimePicker()
+        Me.DTPEGRESO = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox4
@@ -246,7 +251,7 @@ Partial Class DICTAMEN_MEDICO
         '
         'TXTEXPEDIENTE
         '
-        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(277, 546)
+        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(277, 537)
         Me.TXTEXPEDIENTE.Name = "TXTEXPEDIENTE"
         Me.TXTEXPEDIENTE.Size = New System.Drawing.Size(148, 20)
         Me.TXTEXPEDIENTE.TabIndex = 51
@@ -255,7 +260,7 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label11.Location = New System.Drawing.Point(274, 516)
+        Me.Label11.Location = New System.Drawing.Point(274, 507)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(124, 17)
         Me.Label11.TabIndex = 50
@@ -272,7 +277,7 @@ Partial Class DICTAMEN_MEDICO
         '
         'TXTEDAD
         '
-        Me.TXTEDAD.Location = New System.Drawing.Point(277, 620)
+        Me.TXTEDAD.Location = New System.Drawing.Point(277, 611)
         Me.TXTEDAD.Name = "TXTEDAD"
         Me.TXTEDAD.Size = New System.Drawing.Size(148, 20)
         Me.TXTEDAD.TabIndex = 54
@@ -281,7 +286,7 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label12.Location = New System.Drawing.Point(274, 590)
+        Me.Label12.Location = New System.Drawing.Point(274, 581)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(41, 17)
         Me.Label12.TabIndex = 53
@@ -290,7 +295,7 @@ Partial Class DICTAMEN_MEDICO
         '
         'TXTNOMBRE
         '
-        Me.TXTNOMBRE.Location = New System.Drawing.Point(42, 620)
+        Me.TXTNOMBRE.Location = New System.Drawing.Point(42, 611)
         Me.TXTNOMBRE.Name = "TXTNOMBRE"
         Me.TXTNOMBRE.Size = New System.Drawing.Size(189, 20)
         Me.TXTNOMBRE.TabIndex = 56
@@ -299,7 +304,7 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label13.Location = New System.Drawing.Point(40, 590)
+        Me.Label13.Location = New System.Drawing.Point(40, 581)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(58, 17)
         Me.Label13.TabIndex = 55
@@ -310,32 +315,18 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label14.Location = New System.Drawing.Point(39, 667)
+        Me.Label14.Location = New System.Drawing.Point(39, 658)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(118, 17)
         Me.Label14.TabIndex = 57
         Me.Label14.Text = "Fecha de Ingreso"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'DTPINGRESO
-        '
-        Me.DTPINGRESO.Location = New System.Drawing.Point(42, 697)
-        Me.DTPINGRESO.Name = "DTPINGRESO"
-        Me.DTPINGRESO.Size = New System.Drawing.Size(148, 20)
-        Me.DTPINGRESO.TabIndex = 58
-        '
-        'DTPEGRESO
-        '
-        Me.DTPEGRESO.Location = New System.Drawing.Point(277, 697)
-        Me.DTPEGRESO.Name = "DTPEGRESO"
-        Me.DTPEGRESO.Size = New System.Drawing.Size(148, 20)
-        Me.DTPEGRESO.TabIndex = 60
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label15.Location = New System.Drawing.Point(274, 667)
+        Me.Label15.Location = New System.Drawing.Point(274, 658)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(116, 17)
         Me.Label15.TabIndex = 59
@@ -346,7 +337,7 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label16.Location = New System.Drawing.Point(500, 664)
+        Me.Label16.Location = New System.Drawing.Point(493, 658)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(58, 17)
         Me.Label16.TabIndex = 61
@@ -355,7 +346,7 @@ Partial Class DICTAMEN_MEDICO
         '
         'TXTSERVICIO
         '
-        Me.TXTSERVICIO.Location = New System.Drawing.Point(501, 697)
+        Me.TXTSERVICIO.Location = New System.Drawing.Point(496, 688)
         Me.TXTSERVICIO.Name = "TXTSERVICIO"
         Me.TXTSERVICIO.Size = New System.Drawing.Size(148, 20)
         Me.TXTSERVICIO.TabIndex = 62
@@ -422,9 +413,9 @@ Partial Class DICTAMEN_MEDICO
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label20.Location = New System.Drawing.Point(788, 553)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(145, 17)
+        Me.Label20.Size = New System.Drawing.Size(142, 17)
         Me.Label20.TabIndex = 70
-        Me.Label20.Text = "Impedimientos Fisicos"
+        Me.Label20.Text = "Impedimentos Fisicos"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TXTLESIONESCURABLES
@@ -488,7 +479,7 @@ Partial Class DICTAMEN_MEDICO
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label24.Location = New System.Drawing.Point(39, 525)
+        Me.Label24.Location = New System.Drawing.Point(40, 507)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(124, 17)
         Me.Label24.TabIndex = 77
@@ -500,7 +491,7 @@ Partial Class DICTAMEN_MEDICO
         Me.CMBBUSQUEDA.Enabled = False
         Me.CMBBUSQUEDA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CMBBUSQUEDA.FormattingEnabled = True
-        Me.CMBBUSQUEDA.Location = New System.Drawing.Point(42, 545)
+        Me.CMBBUSQUEDA.Location = New System.Drawing.Point(42, 536)
         Me.CMBBUSQUEDA.Name = "CMBBUSQUEDA"
         Me.CMBBUSQUEDA.Size = New System.Drawing.Size(189, 21)
         Me.CMBBUSQUEDA.TabIndex = 76
@@ -511,11 +502,57 @@ Partial Class DICTAMEN_MEDICO
         Me.BTNBUSCAR.BackgroundImage = CType(resources.GetObject("BTNBUSCAR.BackgroundImage"), System.Drawing.Image)
         Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNBUSCAR.FlatAppearance.BorderSize = 50
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(441, 543)
+        Me.BTNBUSCAR.Location = New System.Drawing.Point(441, 534)
         Me.BTNBUSCAR.Name = "BTNBUSCAR"
         Me.BTNBUSCAR.Size = New System.Drawing.Size(31, 25)
         Me.BTNBUSCAR.TabIndex = 78
         Me.BTNBUSCAR.UseVisualStyleBackColor = False
+        '
+        'BTNGUARDAR
+        '
+        Me.BTNGUARDAR.Location = New System.Drawing.Point(190, 767)
+        Me.BTNGUARDAR.Name = "BTNGUARDAR"
+        Me.BTNGUARDAR.Size = New System.Drawing.Size(150, 32)
+        Me.BTNGUARDAR.TabIndex = 79
+        Me.BTNGUARDAR.Text = "Guardar Dictamen"
+        Me.BTNGUARDAR.UseVisualStyleBackColor = True
+        '
+        'BTNCANCELAR
+        '
+        Me.BTNCANCELAR.Location = New System.Drawing.Point(343, 767)
+        Me.BTNCANCELAR.Name = "BTNCANCELAR"
+        Me.BTNCANCELAR.Size = New System.Drawing.Size(150, 32)
+        Me.BTNCANCELAR.TabIndex = 80
+        Me.BTNCANCELAR.Text = "Cancelar"
+        Me.BTNCANCELAR.UseVisualStyleBackColor = True
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'DTPINGRESO
+        '
+        Me.DTPINGRESO.CustomFormat = "dd/MMM/yyyy"
+        Me.DTPINGRESO.Enabled = False
+        Me.DTPINGRESO.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPINGRESO.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DTPINGRESO.Location = New System.Drawing.Point(43, 688)
+        Me.DTPINGRESO.Name = "DTPINGRESO"
+        Me.DTPINGRESO.Size = New System.Drawing.Size(148, 22)
+        Me.DTPINGRESO.TabIndex = 81
+        Me.DTPINGRESO.Value = New Date(2019, 6, 18, 0, 0, 0, 0)
+        '
+        'DTPEGRESO
+        '
+        Me.DTPEGRESO.CustomFormat = "dd/MMM/yyyy"
+        Me.DTPEGRESO.Enabled = False
+        Me.DTPEGRESO.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPEGRESO.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DTPEGRESO.Location = New System.Drawing.Point(277, 684)
+        Me.DTPEGRESO.Name = "DTPEGRESO"
+        Me.DTPEGRESO.Size = New System.Drawing.Size(148, 22)
+        Me.DTPEGRESO.TabIndex = 82
+        Me.DTPEGRESO.Value = New Date(2019, 6, 18, 0, 0, 0, 0)
         '
         'DICTAMEN_MEDICO
         '
@@ -523,6 +560,10 @@ Partial Class DICTAMEN_MEDICO
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(1507, 959)
+        Me.Controls.Add(Me.DTPEGRESO)
+        Me.Controls.Add(Me.DTPINGRESO)
+        Me.Controls.Add(Me.BTNCANCELAR)
+        Me.Controls.Add(Me.BTNGUARDAR)
         Me.Controls.Add(Me.BTNBUSCAR)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.CMBBUSQUEDA)
@@ -541,9 +582,7 @@ Partial Class DICTAMEN_MEDICO
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.TXTSERVICIO)
         Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.DTPEGRESO)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.DTPINGRESO)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.TXTNOMBRE)
         Me.Controls.Add(Me.Label13)
@@ -571,9 +610,11 @@ Partial Class DICTAMEN_MEDICO
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Name = "DICTAMEN_MEDICO"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DICTAMEN_MEDICO"
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -605,8 +646,6 @@ Partial Class DICTAMEN_MEDICO
     Friend WithEvents TXTNOMBRE As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents DTPINGRESO As DateTimePicker
-    Friend WithEvents DTPEGRESO As DateTimePicker
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents TXTSERVICIO As TextBox
@@ -626,4 +665,9 @@ Partial Class DICTAMEN_MEDICO
     Friend WithEvents Label24 As Label
     Friend WithEvents CMBBUSQUEDA As ComboBox
     Friend WithEvents BTNBUSCAR As Button
+    Friend WithEvents BTNGUARDAR As Button
+    Friend WithEvents BTNCANCELAR As Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents DTPINGRESO As DateTimePicker
+    Friend WithEvents DTPEGRESO As DateTimePicker
 End Class

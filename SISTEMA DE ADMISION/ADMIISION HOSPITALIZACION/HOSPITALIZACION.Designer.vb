@@ -30,6 +30,7 @@ Partial Class HOSPITALIZACION
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LBTIPO = New System.Windows.Forms.Label()
         Me.CBFN = New System.Windows.Forms.CheckBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.TXTDIAGNOSTICO = New System.Windows.Forms.TextBox()
@@ -132,7 +133,6 @@ Partial Class HOSPITALIZACION
         Me.CBLUNES = New System.Windows.Forms.CheckBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.LBTIPO = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -253,6 +253,17 @@ Partial Class HOSPITALIZACION
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "DATOS PERSONALES DEL PACIENTE"
+        '
+        'LBTIPO
+        '
+        Me.LBTIPO.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBTIPO.ForeColor = System.Drawing.Color.Red
+        Me.LBTIPO.Location = New System.Drawing.Point(411, 13)
+        Me.LBTIPO.Name = "LBTIPO"
+        Me.LBTIPO.Size = New System.Drawing.Size(449, 40)
+        Me.LBTIPO.TabIndex = 204
+        Me.LBTIPO.Text = "RECIEN NACIDO GEMELO"
+        Me.LBTIPO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CBFN
         '
@@ -1161,7 +1172,7 @@ Partial Class HOSPITALIZACION
         Me.BTNCARGAR.Name = "BTNCARGAR"
         Me.BTNCARGAR.Size = New System.Drawing.Size(85, 86)
         Me.BTNCARGAR.TabIndex = 7
-        Me.MS.SetToolTip(Me.BTNCARGAR, "CARGAR LOS DATOS ALMACENADOS ANTERIORMENTE DE FORMA TEMPORAL PARA SEGUIR ATENDIEN" & _
+        Me.MS.SetToolTip(Me.BTNCARGAR, "CARGAR LOS DATOS ALMACENADOS ANTERIORMENTE DE FORMA TEMPORAL PARA SEGUIR ATENDIEN" &
         "DO")
         Me.BTNCARGAR.UseVisualStyleBackColor = False
         '
@@ -1320,17 +1331,6 @@ Partial Class HOSPITALIZACION
         Me.Label39.TabIndex = 64
         Me.Label39.Text = "BUSCAR HOSPITALIZACION"
         Me.Label39.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'LBTIPO
-        '
-        Me.LBTIPO.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBTIPO.ForeColor = System.Drawing.Color.Red
-        Me.LBTIPO.Location = New System.Drawing.Point(411, 13)
-        Me.LBTIPO.Name = "LBTIPO"
-        Me.LBTIPO.Size = New System.Drawing.Size(449, 40)
-        Me.LBTIPO.TabIndex = 204
-        Me.LBTIPO.Text = "RECIEN NACIDO GEMELO"
-        Me.LBTIPO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'HOSPITALIZACION
         '

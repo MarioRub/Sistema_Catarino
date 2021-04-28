@@ -1827,4 +1827,5 @@ Public Class HOSPITALIZACION
     Private Sub BTNBUSCAR_Click(sender As Object, e As EventArgs) Handles BTNBUSCAR.Click
         REIMPRIMIR_HOSPITALIZACION.Show()
     End Sub
+
 End Class
