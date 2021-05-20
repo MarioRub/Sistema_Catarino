@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Public Class BUSCAR_CITA
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Sub BUSCAR_CITA()
         Dim ADAPTADOR As New SqlDataAdapter
         Dim COMANDO As String = "SET LANGUAGE SPANISH SELECT NACIONALIDAD, PAIS, NOMBRE_PACIENTE, PRIMER_APELLIDO, SEGUNDO_APELLIDO," _

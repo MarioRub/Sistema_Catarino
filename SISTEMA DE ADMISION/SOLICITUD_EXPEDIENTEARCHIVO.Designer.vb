@@ -47,10 +47,16 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.CMBBUSQUEDA = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TXTNOMBREEMPLEADO = New System.Windows.Forms.TextBox()
         Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
         Me.CMBMEDICOS = New System.Windows.Forms.ComboBox()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.CMBCLASIFICACION = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LBTIPO = New System.Windows.Forms.Label()
+        Me.BTNEMPLEADO = New System.Windows.Forms.Button()
+        Me.TXTEMPLEADO = New System.Windows.Forms.TextBox()
+        Me.CMBEMPLEADOS = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +99,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(356, 173)
+        Me.Label5.Location = New System.Drawing.Point(115, 232)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 17)
         Me.Label5.TabIndex = 5
@@ -104,7 +110,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(113, 231)
+        Me.Label6.Location = New System.Drawing.Point(355, 173)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 17)
         Me.Label6.TabIndex = 6
@@ -137,7 +143,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label9.Location = New System.Drawing.Point(356, 418)
+        Me.Label9.Location = New System.Drawing.Point(356, 473)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(140, 17)
         Me.Label9.TabIndex = 9
@@ -146,7 +152,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTMEDICO
         '
-        Me.TXTMEDICO.Location = New System.Drawing.Point(359, 193)
+        Me.TXTMEDICO.Location = New System.Drawing.Point(118, 252)
         Me.TXTMEDICO.Name = "TXTMEDICO"
         Me.TXTMEDICO.Size = New System.Drawing.Size(148, 20)
         Me.TXTMEDICO.TabIndex = 12
@@ -157,7 +163,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.BTNMEDICO.BackgroundImage = CType(resources.GetObject("BTNMEDICO.BackgroundImage"), System.Drawing.Image)
         Me.BTNMEDICO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNMEDICO.FlatAppearance.BorderSize = 50
-        Me.BTNMEDICO.Location = New System.Drawing.Point(513, 190)
+        Me.BTNMEDICO.Location = New System.Drawing.Point(272, 249)
         Me.BTNMEDICO.Name = "BTNMEDICO"
         Me.BTNMEDICO.Size = New System.Drawing.Size(31, 25)
         Me.BTNMEDICO.TabIndex = 13
@@ -184,9 +190,9 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTPACIENTE
         '
-        Me.TXTPACIENTE.Location = New System.Drawing.Point(359, 438)
+        Me.TXTPACIENTE.Location = New System.Drawing.Point(359, 493)
         Me.TXTPACIENTE.Name = "TXTPACIENTE"
-        Me.TXTPACIENTE.Size = New System.Drawing.Size(185, 20)
+        Me.TXTPACIENTE.Size = New System.Drawing.Size(204, 20)
         Me.TXTPACIENTE.TabIndex = 18
         '
         'BTNCONFIRMAR
@@ -249,9 +255,9 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.CMBCONSULTORIO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
         Me.CMBCONSULTORIO.FormattingEnabled = True
-        Me.CMBCONSULTORIO.Location = New System.Drawing.Point(116, 251)
+        Me.CMBCONSULTORIO.Location = New System.Drawing.Point(358, 193)
         Me.CMBCONSULTORIO.Name = "CMBCONSULTORIO"
-        Me.CMBCONSULTORIO.Size = New System.Drawing.Size(181, 21)
+        Me.CMBCONSULTORIO.Size = New System.Drawing.Size(205, 21)
         Me.CMBCONSULTORIO.Sorted = True
         Me.CMBCONSULTORIO.TabIndex = 30
         '
@@ -280,19 +286,12 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label12.Location = New System.Drawing.Point(113, 294)
+        Me.Label12.Location = New System.Drawing.Point(116, 295)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(148, 17)
         Me.Label12.TabIndex = 33
         Me.Label12.Text = "Empleado que Solicita"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TXTNOMBREEMPLEADO
-        '
-        Me.TXTNOMBREEMPLEADO.Location = New System.Drawing.Point(115, 314)
-        Me.TXTNOMBREEMPLEADO.Name = "TXTNOMBREEMPLEADO"
-        Me.TXTNOMBREEMPLEADO.Size = New System.Drawing.Size(182, 20)
-        Me.TXTNOMBREEMPLEADO.TabIndex = 36
         '
         'TXTIDENTIDAD
         '
@@ -309,7 +308,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.CMBMEDICOS.FormattingEnabled = True
         Me.CMBMEDICOS.Location = New System.Drawing.Point(359, 251)
         Me.CMBMEDICOS.Name = "CMBMEDICOS"
-        Me.CMBMEDICOS.Size = New System.Drawing.Size(185, 21)
+        Me.CMBMEDICOS.Size = New System.Drawing.Size(204, 21)
         Me.CMBMEDICOS.Sorted = True
         Me.CMBMEDICOS.TabIndex = 38
         '
@@ -317,15 +316,91 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'CMBCLASIFICACION
+        '
+        Me.CMBCLASIFICACION.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CMBCLASIFICACION.FormattingEnabled = True
+        Me.CMBCLASIFICACION.Location = New System.Drawing.Point(359, 437)
+        Me.CMBCLASIFICACION.Name = "CMBCLASIFICACION"
+        Me.CMBCLASIFICACION.Size = New System.Drawing.Size(204, 21)
+        Me.CMBCLASIFICACION.TabIndex = 39
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label2.Location = New System.Drawing.Point(355, 417)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(86, 17)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = "Clasificacion"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'LBTIPO
+        '
+        Me.LBTIPO.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBTIPO.ForeColor = System.Drawing.Color.Red
+        Me.LBTIPO.Location = New System.Drawing.Point(298, 381)
+        Me.LBTIPO.Name = "LBTIPO"
+        Me.LBTIPO.Size = New System.Drawing.Size(381, 30)
+        Me.LBTIPO.TabIndex = 206
+        Me.LBTIPO.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'BTNEMPLEADO
+        '
+        Me.BTNEMPLEADO.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.BTNEMPLEADO.BackgroundImage = CType(resources.GetObject("BTNEMPLEADO.BackgroundImage"), System.Drawing.Image)
+        Me.BTNEMPLEADO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNEMPLEADO.FlatAppearance.BorderSize = 50
+        Me.BTNEMPLEADO.Location = New System.Drawing.Point(272, 312)
+        Me.BTNEMPLEADO.Name = "BTNEMPLEADO"
+        Me.BTNEMPLEADO.Size = New System.Drawing.Size(31, 25)
+        Me.BTNEMPLEADO.TabIndex = 208
+        Me.BTNEMPLEADO.UseVisualStyleBackColor = False
+        '
+        'TXTEMPLEADO
+        '
+        Me.TXTEMPLEADO.Location = New System.Drawing.Point(118, 315)
+        Me.TXTEMPLEADO.Name = "TXTEMPLEADO"
+        Me.TXTEMPLEADO.Size = New System.Drawing.Size(148, 20)
+        Me.TXTEMPLEADO.TabIndex = 207
+        '
+        'CMBEMPLEADOS
+        '
+        Me.CMBEMPLEADOS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
+        Me.CMBEMPLEADOS.FormattingEnabled = True
+        Me.CMBEMPLEADOS.Location = New System.Drawing.Point(359, 315)
+        Me.CMBEMPLEADOS.Name = "CMBEMPLEADOS"
+        Me.CMBEMPLEADOS.Size = New System.Drawing.Size(204, 21)
+        Me.CMBEMPLEADOS.Sorted = True
+        Me.CMBEMPLEADOS.TabIndex = 210
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label13.Location = New System.Drawing.Point(356, 295)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(225, 17)
+        Me.Label13.TabIndex = 209
+        Me.Label13.Text = "Nombre del Empleado Encontrado"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(691, 723)
+        Me.Controls.Add(Me.CMBEMPLEADOS)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.BTNEMPLEADO)
+        Me.Controls.Add(Me.TXTEMPLEADO)
+        Me.Controls.Add(Me.LBTIPO)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.CMBCLASIFICACION)
         Me.Controls.Add(Me.CMBMEDICOS)
         Me.Controls.Add(Me.TXTIDENTIDAD)
-        Me.Controls.Add(Me.TXTNOMBREEMPLEADO)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.CMBBUSQUEDA)
@@ -351,7 +426,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.Controls.Add(Me.Label1)
         Me.Name = "SOLICITUD_EXPEDIENTEARCHIVO"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SOLICITUD_EXPEDIENTEARCHIVO"
+        Me.Text = " "
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -383,8 +458,14 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
     Friend WithEvents CMBBUSQUEDA As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents TXTNOMBREEMPLEADO As TextBox
     Friend WithEvents TXTIDENTIDAD As TextBox
     Friend WithEvents CMBMEDICOS As ComboBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents Label2 As Label
+    Friend WithEvents CMBCLASIFICACION As ComboBox
+    Friend WithEvents LBTIPO As Label
+    Friend WithEvents BTNEMPLEADO As Button
+    Friend WithEvents TXTEMPLEADO As TextBox
+    Friend WithEvents CMBEMPLEADOS As ComboBox
+    Friend WithEvents Label13 As Label
 End Class

@@ -3,15 +3,31 @@ Imports System.Data.SqlClient
 
 Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
-    Public CONEXION As String = "Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123"
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
+    Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
     Public ESTADO As Boolean = False
     Private Sub SOLICITUD_EXPEDIENTEARCHIVO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CMBCLASIFICACION.DropDownStyle = ComboBoxStyle.DropDownList
+        CMBCLASIFICACION.Items.Add("NORMAL")
+        CMBCLASIFICACION.Items.Add("RN#1")
+        CMBCLASIFICACION.Items.Add("RN#2")
+        CMBCLASIFICACION.Items.Add("RN#3")
+        CMBCLASIFICACION.Items.Add("HIJO_1")
+        CMBCLASIFICACION.Items.Add("HIJO_2")
+        CMBCLASIFICACION.Items.Add("HIJO_3")
+        CMBCLASIFICACION.Items.Add("OBITO_1")
+        CMBCLASIFICACION.Items.Add("OBITO_2")
+        CMBCLASIFICACION.Items.Add("OBITO_3")
+        CMBCLASIFICACION.Items.Add("RN_GEMELO_1")
+        CMBCLASIFICACION.Items.Add("RN_GEMELO_2")
+        CMBCLASIFICACION.Items.Add("RN_GEMELO_3")
         TXTPACIENTE.Enabled = False
         CMBMEDICOS.DropDownStyle = ComboBoxStyle.DropDownList
+        CMBEMPLEADOS.DropDownStyle = ComboBoxStyle.DropDownList
         CMBESPECIALIDAD.DropDownStyle = ComboBoxStyle.DropDownList
         CMBCONSULTORIO.DropDownStyle = ComboBoxStyle.DropDownList
         CMBBUSQUEDA.DropDownStyle = ComboBoxStyle.DropDownList
+        CMBEMPLEADOS.Enabled = False
         CMBMEDICOS.Enabled = False
         CMBBUSQUEDA.Enabled = True
         CMBBUSQUEDA.Items.Add("IDENTIDAD")
@@ -198,6 +214,22 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         End If
     End Sub
 
+    Private Sub CMBCLASIFICACION_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMBCLASIFICACION.SelectedIndexChanged
+        CMBCLASIFICACION.DropDownStyle = ComboBoxStyle.DropDownList
+        If CMBCLASIFICACION.Text = "NORMAL" Then
+            LBTIPO.Text = "NORMAL = POSEE IDENTIDAD"
+        ElseIf CMBCLASIFICACION.Text = "RN#1" Or CMBCLASIFICACION.Text = "RN#2" Or
+            CMBCLASIFICACION.Text = "RN#3" Then
+            LBTIPO.Text = "RECIEN NACIDO"
+        ElseIf CMBCLASIFICACION.Text = "OBITO_1" Or CMBCLASIFICACION.Text = "OBITO_2" Or CMBCLASIFICACION.Text = "OBITO_3" Then
+            LBTIPO.Text = "OBITO"
+        ElseIf CMBCLASIFICACION.Text = "HIJO_1" Or CMBCLASIFICACION.Text = "HIJO_2" Or CMBCLASIFICACION.Text = "HIJO_3" Then
+            LBTIPO.Text = "HIJO"
+        ElseIf CMBCLASIFICACION.Text = "RN_GEMELO_1" Or CMBCLASIFICACION.Text = "RN_GEMELO_2" Or CMBCLASIFICACION.Text = "RN_GEMELO_3" Then
+            LBTIPO.Text = "RECIEN NACIDO GEMELO"
+        End If
+    End Sub
+
     Private Sub CMBESPECIALIDAD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMBESPECIALIDAD.SelectedIndexChanged
         '----------CARGAR COMBOBOX ESPECIALIDAD------------
         CMBESPECIALIDAD.DropDownStyle = ComboBoxStyle.DropDownList
@@ -250,7 +282,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
     Private Sub BTNCONFIRMAR_Click(sender As Object, e As EventArgs) Handles BTNCONFIRMAR.Click
 
         Dim ADAPTADOR As New SqlDataAdapter
-        Dim COMANDO As String = "SELECT USUARIO FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim COMANDO As String = "SELECT USUARIO, IDENTIDAD FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
         Dim DATO As DataSet
         ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
         DATO = New DataSet
@@ -261,29 +293,34 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             MsgBox("POR FAVOR SELECCIONE UNA ESPECIALIDAD.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBMEDICOS.Text = "" Then
             ErrorProvider1.Clear()
-            ErrorProvider1.SetError(CMBMEDICOS, "Seleccione una Medico")
+            ErrorProvider1.SetError(CMBMEDICOS, "Seleccione una Medico.")
             MsgBox("POR FAVOR SELECCIONE UN MEDICO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
-        ElseIf TXTNOMBREEMPLEADO.Text = "" Then
+        ElseIf CMBEMPLEADOS.Text = "" Then
             ErrorProvider1.Clear()
-            ErrorProvider1.SetError(TXTNOMBREEMPLEADO, "Seleccione una Medico")
+            ErrorProvider1.SetError(CMBEMPLEADOS, "Seleccione un Empleado.")
             MsgBox("INGRESE EL NOMBRE DEL EMPLEADO QUE RETIRA.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf TXTPACIENTE.Text = "" Then
             ErrorProvider1.Clear()
-            ErrorProvider1.SetError(TXTPACIENTE, "Seleccione una Medico")
+            ErrorProvider1.SetError(TXTPACIENTE, "Seleccione un Paciente.")
             MsgBox("INGRESE LA IDENTIDAD O CORRELATIVO DE UN PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+        ElseIf CMBCLASIFICACION.Text = "" Then
+            ErrorProvider1.Clear()
+            ErrorProvider1.SetError(CMBCLASIFICACION, "Seleccione una Clasificacion.")
+            MsgBox("SELECCIONE UNA CLASIFICACION PARA LA IDENTIDAD DEL PACIENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf ESTADO = True Then
             ErrorProvider1.Clear()
             MsgBox("EL EXPEDIENTE SE ENCUENTRA PRESTADO ACTUALMENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf ESTADO = False Then
             Dim FECHA As Date = Date.Now
+            'Dim HORA As Date = DateTime.Now.ToString("hh:mm:ss")
             If CMBBUSQUEDA.Text = "IDENTIDAD" Then
 
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, TIPO, FECHA_SALIDA, HORA_SALIDA) " _
                 & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBEMPLEADOS.Text & "','" & DATO.Tables(0).Rows(0)("IDENTIDAD") & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & CMBCLASIFICACION.Text & "','" & FECHA & "','" & FECHA & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
@@ -303,7 +340,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                 Try
                     Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
                     & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & TXTNOMBREEMPLEADO.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBEMPLEADOS.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
@@ -320,8 +357,35 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
     End Sub
 
-    Private Sub TXTNOMBREEMPLEADO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNOMBREEMPLEADO.KeyPress
+    Private Sub TXTNOMBREEMPLEADO_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.KeyChar = Char.ToUpper(e.KeyChar)
+    End Sub
+
+    Private Sub BTNEMPLEADO_Click(sender As Object, e As EventArgs) Handles BTNEMPLEADO.Click
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT USUARIO " _
+        & " FROM LOGIN WHERE USUARIO LIKE '" _
+        & "%" & TXTEMPLEADO.Text & "%" & "'"
+
+        Dim DATO As DataSet
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
+        DATO = New DataSet
+        ADAPTADOR.Fill(DATO)
+        Try
+            If DATO.Tables(0).Rows.Count = 0 Then
+                MsgBox("NO SE HA ENCONTRADO AL EMPLEADO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+            ElseIf TXTEMPLEADO.Text <> "" Then
+                With CMBEMPLEADOS
+                    .DataSource = DATO.Tables(0)
+                    .DisplayMember = "USUARIO"
+                End With
+                CMBEMPLEADOS.Enabled = True
+            End If
+        Catch ex As Exception
+            MsgBox("NO SE HA ENCONTRADO AL EMPLEADO.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
+        End Try
+        ADAPTADOR.Dispose()
+        DATO.Dispose()
     End Sub
 
 End Class
