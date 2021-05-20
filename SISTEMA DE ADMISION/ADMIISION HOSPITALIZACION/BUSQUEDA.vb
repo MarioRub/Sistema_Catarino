@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Public Class BUSQUEDA
-    Public CONE As SqlConnection = New SqlConnection("Data Source=TCP:HNMCR\HNMCR,49500;Initial Catalog=ADMISION;User ID=ADM;Password=Familia123")
+    Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
     Private Sub TXTIDENTIDAD_TextChanged(sender As Object, e As EventArgs) Handles TXTIDENTIDAD.TextChanged
         DGVGENERAL.Columns.Clear()
         LBIDENTIDAD.Text = CStr(Len(TXTIDENTIDAD.Text))
