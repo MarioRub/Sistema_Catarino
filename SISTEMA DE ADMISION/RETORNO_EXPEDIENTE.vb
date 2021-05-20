@@ -161,7 +161,7 @@ Public Class RETORNO_EXPEDIENTE
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "'  WHERE IDENTIDAD='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
+                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE IDENTIDAD='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'ACTUALIZAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
@@ -179,7 +179,7 @@ Public Class RETORNO_EXPEDIENTE
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "'  WHERE CORRELATIVO='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
+                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE CORRELATIVO='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
 
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
