@@ -338,9 +338,9 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, FECHA_SALIDA) " _
+                    Dim GUARDAR As String = "INSERT INTO SOLICITUD_EXPEDIENTE (CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, NOMBRE_EMPLEADO, IDENTIDAD_USUARIO, USUARIO, ESTADO, TIPO, FECHA_SALIDA, HORA_SALIDA) " _
                     & "VALUES ('" & TXTEXPEDIENTE.Text & "','" & TXTPACIENTE.Text & "','" & CMBMEDICOS.Text & "','" _
-                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBEMPLEADOS.Text & "','" & TXTEXPEDIENTE.Text & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & FECHA & "')"
+                    & CMBESPECIALIDAD.Text & "','" & CMBCONSULTORIO.Text & "','" & CMBEMPLEADOS.Text & "','" & DATO.Tables(0).Rows(0)("IDENTIDAD") & "','" & DATO.Tables(0).Rows(0)("USUARIO") & "','" & "PRESTADO" & "','" & CMBCLASIFICACION.Text & "','" & FECHA & "','" & FECHA & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
