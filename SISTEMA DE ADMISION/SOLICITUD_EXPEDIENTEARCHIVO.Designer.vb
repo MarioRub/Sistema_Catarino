@@ -132,7 +132,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label8.Location = New System.Drawing.Point(115, 476)
+        Me.Label8.Location = New System.Drawing.Point(116, 473)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 17)
         Me.Label8.TabIndex = 8
@@ -171,7 +171,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         'TXTEXPEDIENTE
         '
-        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(118, 496)
+        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(119, 493)
         Me.TXTEXPEDIENTE.Name = "TXTEXPEDIENTE"
         Me.TXTEXPEDIENTE.Size = New System.Drawing.Size(148, 20)
         Me.TXTEXPEDIENTE.TabIndex = 16
@@ -182,7 +182,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         Me.BTNEXPEDIENTE.BackgroundImage = CType(resources.GetObject("BTNEXPEDIENTE.BackgroundImage"), System.Drawing.Image)
         Me.BTNEXPEDIENTE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNEXPEDIENTE.FlatAppearance.BorderSize = 50
-        Me.BTNEXPEDIENTE.Location = New System.Drawing.Point(272, 493)
+        Me.BTNEXPEDIENTE.Location = New System.Drawing.Point(273, 490)
         Me.BTNEXPEDIENTE.Name = "BTNEXPEDIENTE"
         Me.BTNEXPEDIENTE.Size = New System.Drawing.Size(31, 25)
         Me.BTNEXPEDIENTE.TabIndex = 17
@@ -320,7 +320,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.CMBCLASIFICACION.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CMBCLASIFICACION.FormattingEnabled = True
-        Me.CMBCLASIFICACION.Location = New System.Drawing.Point(359, 437)
+        Me.CMBCLASIFICACION.Location = New System.Drawing.Point(358, 437)
         Me.CMBCLASIFICACION.Name = "CMBCLASIFICACION"
         Me.CMBCLASIFICACION.Size = New System.Drawing.Size(204, 21)
         Me.CMBCLASIFICACION.TabIndex = 39
@@ -329,7 +329,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(355, 417)
+        Me.Label2.Location = New System.Drawing.Point(354, 417)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 17)
         Me.Label2.TabIndex = 40
@@ -340,7 +340,7 @@ Partial Class SOLICITUD_EXPEDIENTEARCHIVO
         '
         Me.LBTIPO.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBTIPO.ForeColor = System.Drawing.Color.Red
-        Me.LBTIPO.Location = New System.Drawing.Point(298, 381)
+        Me.LBTIPO.Location = New System.Drawing.Point(297, 381)
         Me.LBTIPO.Name = "LBTIPO"
         Me.LBTIPO.Size = New System.Drawing.Size(381, 30)
         Me.LBTIPO.TabIndex = 206

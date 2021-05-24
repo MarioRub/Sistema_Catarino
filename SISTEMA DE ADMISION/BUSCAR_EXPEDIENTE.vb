@@ -4,6 +4,7 @@ Public Class BUSCAR_EXPEDIENTE
 
     Public CONE As SqlConnection = New SqlConnection("Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!")
     Public CONEXION As String = "Data Source=probono-db.cjy2jdticell.us-east-2.rds.amazonaws.com;Initial Catalog=ADMISION;User ID=acklen;Password=acklen11!"
+    Public ESTADO As String = ""
 
     Private Sub BUSCAR_EXPEDIENTE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CMBBUSQUEDA.DropDownStyle = ComboBoxStyle.DropDownList
@@ -14,6 +15,7 @@ Public Class BUSCAR_EXPEDIENTE
         TXTNOMBREPACIENTE.Enabled = False
         CBIDENTIDAD.Enabled = True
         CBNOMBRE.Enabled = True
+        CHKHISTORIAL.Enabled = False
     End Sub
 
     Private Sub TXTEXPEDIENTE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTEXPEDIENTE.KeyPress
@@ -147,8 +149,6 @@ Public Class BUSCAR_EXPEDIENTE
                 ElseIf DATO.Rows.Count = 0 Then
                     MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
                     TXTEXPEDIENTE.Text = ""
-                    CBIDENTIDAD.Checked = False
-                    CBNOMBRE.Checked = False
                 End If
             Catch ex As Exception
                 MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
@@ -212,8 +212,6 @@ Public Class BUSCAR_EXPEDIENTE
                 ElseIf DATO.Rows.Count = 0 Then
                     MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
                     TXTEXPEDIENTE.Text = ""
-                    CBIDENTIDAD.Checked = False
-                    CBNOMBRE.Checked = False
                 End If
             Catch ex As Exception
                 MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
@@ -281,8 +279,6 @@ Public Class BUSCAR_EXPEDIENTE
                 ElseIf DATO.Rows.Count = 0 Then
                     MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
                     TXTEXPEDIENTE.Text = ""
-                    CBIDENTIDAD.Checked = False
-                    CBNOMBRE.Checked = False
                 End If
             Catch ex As Exception
                 MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
@@ -346,8 +342,6 @@ Public Class BUSCAR_EXPEDIENTE
                 ElseIf DATO.Rows.Count = 0 Then
                     MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
                     TXTEXPEDIENTE.Text = ""
-                    CBIDENTIDAD.Checked = False
-                    CBNOMBRE.Checked = False
                 End If
             Catch ex As Exception
                 MsgBox("NO SE ESTABLECIO CONEXION POR: " & ex.ToString)
@@ -417,8 +411,6 @@ Public Class BUSCAR_EXPEDIENTE
             ElseIf DATO.Rows.Count = 0 Then
                 TXTNOMBREPACIENTE.Text = ""
                 TXTEXPEDIENTE.Text = ""
-                CBIDENTIDAD.Checked = False
-                CBNOMBRE.Checked = False
                 MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
             End If
         Catch ex As Exception
@@ -488,8 +480,6 @@ Public Class BUSCAR_EXPEDIENTE
             ElseIf DATO.Rows.Count = 0 Then
                 TXTNOMBREPACIENTE.Text = ""
                 TXTEXPEDIENTE.Text = ""
-                CBIDENTIDAD.Checked = False
-                CBNOMBRE.Checked = False
                 MsgBox("NO HAY REGISTRO ALMACENADO", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
             End If
         Catch ex As Exception
@@ -511,34 +501,37 @@ Public Class BUSCAR_EXPEDIENTE
         End If
     End Sub
 
-    Private Sub TXTNOMBREPACIENTE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNOMBREPACIENTE.KeyPress
-        If TXTNOMBREPACIENTE.Text.Length < 1 Then
-            BTNBUSCAR.Enabled = False
-        ElseIf TXTNOMBREPACIENTE.Text.Length > 1 Then
-            BTNBUSCAR.Enabled = True
-        End If
-    End Sub
-
     Private Sub BTNSALIR_Click(sender As Object, e As EventArgs) Handles BTNSALIR.Click
         Me.Close()
     End Sub
 
     Private Sub BTNBUSCAR_Click(sender As Object, e As EventArgs) Handles BTNBUSCAR.Click
-        If CHKHISTORIAL.Checked = True Then
-            If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
-                IDENTIDAD()
-            ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
-                NOMBRE()
 
-            End If
-        Else
-            If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
-                IDENTIDAD_UNICO()
-            ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
-                NOMBRE_UNICO()
+        If CBIDENTIDAD.Checked = True And CBNOMBRE.Checked = False Then
+            ESTADO = "IDENTIDAD_UNICO"
+            CHKHISTORIAL.Enabled = True
+            IDENTIDAD_UNICO()
+        ElseIf CBIDENTIDAD.Checked = False And CBNOMBRE.Checked = True Then
+            ESTADO = "NOMBRE_UNICO"
+            CHKHISTORIAL.Enabled = True
+            NOMBRE_UNICO()
 
-            End If
         End If
     End Sub
 
+    Private Sub CHKHISTORIAL_CheckedChanged(sender As Object, e As EventArgs) Handles CHKHISTORIAL.CheckedChanged
+        If CHKHISTORIAL.Checked = True Then
+            If ESTADO = "IDENTIDAD_UNICO" Then
+                IDENTIDAD()
+            ElseIf ESTADO = "NOMBRE_UNICO" Then
+                NOMBRE()
+            End If
+        Else
+            If ESTADO = "IDENTIDAD_UNICO" Then
+                IDENTIDAD_UNICO()
+            ElseIf ESTADO = "NOMBRE_UNICO" Then
+                NOMBRE_UNICO()
+            End If
+        End If
+    End Sub
 End Class

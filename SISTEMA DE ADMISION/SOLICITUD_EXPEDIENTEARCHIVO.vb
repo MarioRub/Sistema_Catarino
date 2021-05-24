@@ -103,25 +103,25 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
 
     Private Sub BTNEXPEDIENTE_Click(sender As Object, e As EventArgs) Handles BTNEXPEDIENTE.Click
 
-        Dim ADAPTADOR2 As New SqlDataAdapter
-        Dim COMANDO2 As String = "SELECT ESTADO FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
-        Dim DATO2 As DataSet
-        ADAPTADOR2 = New SqlDataAdapter(COMANDO2, CONEXION)
-        DATO2 = New DataSet
-        ADAPTADOR2.Fill(DATO2)
+        If CMBBUSQUEDA.Text = "IDENTIDAD" Then
 
-        For Each row As DataRow In DATO2.Tables(0).Rows
-            If row("ESTADO").ToString() = "PRESTADO" Then
-                ESTADO = True
-                Exit For
+            Dim ADAPTADOR2 As New SqlDataAdapter
+            Dim COMANDO2 As String = "SELECT ESTADO FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD ='" & TXTEXPEDIENTE.Text & "'"
+            Dim DATO2 As DataSet
+            ADAPTADOR2 = New SqlDataAdapter(COMANDO2, CONEXION)
+            DATO2 = New DataSet
+            ADAPTADOR2.Fill(DATO2)
+
+            If DATO2.Tables(0).Rows.Count > 0 Then
+                For Each row As DataRow In DATO2.Tables(0).Rows
+                    If row("ESTADO").ToString() = "PRESTADO" Then
+                        Exit For
+                    End If
+                Next
             Else
                 ESTADO = False
             End If
-        Next
 
-
-
-        If CMBBUSQUEDA.Text = "IDENTIDAD" Then
             Dim ADAPTADOR As New SqlDataAdapter
             Dim COMANDO As String = "SELECT NOMBRE_PACIENTE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, " _
                                     & "CASE WHEN (DEFUNCION = '0101-01-01')" _
@@ -144,6 +144,25 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             DATO.Dispose()
 
         ElseIf CMBBUSQUEDA.Text = "CORRELATIVO" Then
+
+            Dim ADAPTADOR2 As New SqlDataAdapter
+            Dim COMANDO2 As String = "SELECT ESTADO FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO ='" & TXTEXPEDIENTE.Text & "'"
+            Dim DATO2 As DataSet
+            ADAPTADOR2 = New SqlDataAdapter(COMANDO2, CONEXION)
+            DATO2 = New DataSet
+            ADAPTADOR2.Fill(DATO2)
+
+            If DATO2.Tables(0).Rows.Count() = 0 Then
+                ESTADO = False
+            Else
+                For Each row As DataRow In DATO2.Tables(0).Rows
+                    If row("ESTADO").ToString() = "PRESTADO" Then
+                        ESTADO = True
+                        Exit For
+                    End If
+                Next
+            End If
+
             Dim ADAPTADOR As New SqlDataAdapter
             Dim COMANDO As String = "SELECT NOMBRE_PACIENTE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, " _
                                     & "CASE WHEN (DEFUNCION = '0101-01-01')" _
@@ -288,7 +307,6 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
         DATO = New DataSet
         ADAPTADOR.Fill(DATO)
 
-
         If CMBESPECIALIDAD.Text = "" Then
             MsgBox("POR FAVOR SELECCIONE UNA ESPECIALIDAD.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf CMBMEDICOS.Text = "" Then
@@ -312,7 +330,6 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             MsgBox("EL EXPEDIENTE SE ENCUENTRA PRESTADO ACTUALMENTE.", MsgBoxStyle.Information, "AVISO DEL SISTEMA")
         ElseIf ESTADO = False Then
             Dim FECHA As Date = Date.Now
-            'Dim HORA As Date = DateTime.Now.ToString("hh:mm:ss")
             If CMBBUSQUEDA.Text = "IDENTIDAD" Then
 
                 CONE.Open()
