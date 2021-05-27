@@ -115,6 +115,7 @@ Public Class SOLICITUD_EXPEDIENTEARCHIVO
             If DATO2.Tables(0).Rows.Count > 0 Then
                 For Each row As DataRow In DATO2.Tables(0).Rows
                     If row("ESTADO").ToString() = "PRESTADO" Then
+                        ESTADO = True
                         Exit For
                     End If
                 Next

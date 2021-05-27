@@ -130,7 +130,7 @@ Public Class RETORNO_EXPEDIENTE
             Next
         ElseIf CMBBUSQUEDA.Text = "CORRELATIVO" Then
             Dim ADAPTADOR2 As New SqlDataAdapter
-            Dim COMANDO2 As String = "SELECT ESTADO FROM WHERE CORRELATIVO ='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
+            Dim COMANDO2 As String = "SELECT ESTADO FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO ='" & TXTEXPEDIENTE.Text & "'"
             Dim DATO2 As DataSet
             ADAPTADOR2 = New SqlDataAdapter(COMANDO2, CONEXION)
             DATO2 = New DataSet
@@ -161,7 +161,7 @@ Public Class RETORNO_EXPEDIENTE
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE IDENTIDAD='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
+                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD ='" & TXTEXPEDIENTE.Text & "')"
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'ACTUALIZAR REGISTRO EN TABLA
                     COMAND.ExecuteNonQuery()
@@ -179,7 +179,7 @@ Public Class RETORNO_EXPEDIENTE
                 CONE.Open()
                 Dim ESTADO As String = ""
                 Try
-                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE CORRELATIVO='" & TXTEXPEDIENTE.Text & "' AND NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE)"
+                    Dim GUARDAR As String = "UPDATE SOLICITUD_EXPEDIENTE SET ESTADO='" & "DISPONIBLE'" & " ,COMENTARIO='" & TXTCOMENTARIO.Text & "', FECHA_ENTREGA='" & FECHA & "', HORA_ENTREGA='" & FECHA & "'  WHERE NO = (SELECT MAX(NO) FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO ='" & TXTEXPEDIENTE.Text & "')"
 
                     Dim COMAND As SqlCommand
                     COMAND = New SqlCommand(GUARDAR, CONE) 'INSERTAR REGISTRO EN TABLA

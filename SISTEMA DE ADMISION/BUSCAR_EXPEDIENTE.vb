@@ -94,7 +94,7 @@ Public Class BUSCAR_EXPEDIENTE
             Dim ADAPTADOR As New SqlDataAdapter
             Dim COMANDO As String = "SELECT ESTADO, TIPO, IDENTIDAD, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA, HORA_SALIDA, FECHA_ENTREGA, HORA_ENTREGA FROM SOLICITUD_EXPEDIENTE WHERE IDENTIDAD='" _
-                                & TXTEXPEDIENTE.Text & "'"
+                                & TXTEXPEDIENTE.Text & "' ORDER BY NO"
             Dim DATO As DataTable
             ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
             DATO = New DataTable
@@ -157,7 +157,7 @@ Public Class BUSCAR_EXPEDIENTE
             Dim ADAPTADOR As New SqlDataAdapter
             Dim COMANDO As String = "SELECT ESTADO, TIPO, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA, HORA_SALIDA, FECHA_ENTREGA, HORA_ENTREGA FROM SOLICITUD_EXPEDIENTE WHERE CORRELATIVO='" _
-                                & TXTEXPEDIENTE.Text & "'"
+                                & TXTEXPEDIENTE.Text & "' ORDER BY NO"
             Dim DATO As DataTable
             ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
             DATO = New DataTable
@@ -353,7 +353,7 @@ Public Class BUSCAR_EXPEDIENTE
         Dim ADAPTADOR As New SqlDataAdapter
         Dim COMANDO As String = "SELECT ESTADO, TIPO, IDENTIDAD, CORRELATIVO, NOMBRE_PACIENTE, MEDICO, ESPECIALIDAD, CONSULTORIO, " _
                                 & "NOMBRE_EMPLEADO, USUARIO, FECHA_SALIDA, HORA_SALIDA, FECHA_ENTREGA, HORA_ENTREGA FROM SOLICITUD_EXPEDIENTE WHERE NOMBRE_PACIENTE LIKE '" _
-                                & "%" & TXTNOMBREPACIENTE.Text & "%" & "'"
+                                & "%" & TXTNOMBREPACIENTE.Text & "%" & "' ORDER BY NO"
         Dim DATO As DataTable
         ADAPTADOR = New SqlDataAdapter(COMANDO, CONE)
         DATO = New DataTable
