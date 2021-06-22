@@ -943,13 +943,6 @@ C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\SYSTEMADMIS
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\SYSTEMADMISION.exe
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\SYSTEMADMISION.pdb
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\SYSTEMADMISION.xml
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\AxShockwaveFlashObjects.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
@@ -965,9 +958,6 @@ C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDeci
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\stdole.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbprojAssemblyReference.cache
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\Interop.CrystalActiveXReportViewerLib13.dll
-C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\Interop.CrystalReportViewerExportLib.dll
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.ResolveComReference.cache
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSCAR_SALHOS.resources
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSQUEDA.resources
@@ -1043,3 +1033,5 @@ C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.exe
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.xml
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.pdb
+C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.AssemblyReference.cache
+C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.CERTIFICACION_NACIMIENTO.resources

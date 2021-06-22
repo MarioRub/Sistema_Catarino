@@ -322,6 +322,12 @@
     <Compile Include="CENSO_REGISTROMOD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CERTIFICACION_NACIMIENTO.Designer.vb">
+      <DependentUpon>CERTIFICACION_NACIMIENTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CERTIFICACION_NACIMIENTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DEFUNCION\BUSCAR_DEF.Designer.vb">
       <DependentUpon>BUSCAR_DEF.vb</DependentUpon>
     </Compile>
@@ -668,6 +674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CENSO_REGISTROMOD.resx">
       <DependentUpon>CENSO_REGISTROMOD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CERTIFICACION_NACIMIENTO.resx">
+      <DependentUpon>CERTIFICACION_NACIMIENTO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DEFUNCION\BUSCAR_DEF.resx">
       <DependentUpon>BUSCAR_DEF.vb</DependentUpon>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PRINCIPAL
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class PRINCIPAL
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PRINCIPAL))
@@ -50,6 +50,7 @@ Partial Class PRINCIPAL
         Me.AGREGARFERENCIAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SOLICITUDEXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BUSCAREXPEDIENTEToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RETORNAREXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EMERGENCIAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IMPRONTOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NUEVOToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -123,7 +124,6 @@ Partial Class PRINCIPAL
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TXTIDENTIDAD = New System.Windows.Forms.TextBox()
-        Me.RETORNAREXPEDIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -181,7 +181,7 @@ Partial Class PRINCIPAL
         Me.NUEVOToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MEDICOToolStripMenuItem1, Me.ESPECIALIDADToolStripMenuItem})
         Me.NUEVOToolStripMenuItem.Image = CType(resources.GetObject("NUEVOToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NUEVOToolStripMenuItem.Name = "NUEVOToolStripMenuItem"
-        Me.NUEVOToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NUEVOToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.NUEVOToolStripMenuItem.Text = "NUEVO / EDITAR"
         '
         'MEDICOToolStripMenuItem1
@@ -200,13 +200,13 @@ Partial Class PRINCIPAL
         '
         Me.BUSCARToolStripMenuItem.Image = CType(resources.GetObject("BUSCARToolStripMenuItem.Image"), System.Drawing.Image)
         Me.BUSCARToolStripMenuItem.Name = "BUSCARToolStripMenuItem"
-        Me.BUSCARToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BUSCARToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.BUSCARToolStripMenuItem.Text = "BUSCAR"
         '
         'VACACIONESToolStripMenuItem
         '
         Me.VACACIONESToolStripMenuItem.Name = "VACACIONESToolStripMenuItem"
-        Me.VACACIONESToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VACACIONESToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.VACACIONESToolStripMenuItem.Text = "VACACIONES"
         '
         'CONSULTAEXTERNAToolStripMenuItem
@@ -296,6 +296,12 @@ Partial Class PRINCIPAL
         Me.BUSCAREXPEDIENTEToolStripMenuItem1.Name = "BUSCAREXPEDIENTEToolStripMenuItem1"
         Me.BUSCAREXPEDIENTEToolStripMenuItem1.Size = New System.Drawing.Size(248, 22)
         Me.BUSCAREXPEDIENTEToolStripMenuItem1.Text = "BUSCAR EXPEDIENTE"
+        '
+        'RETORNAREXPEDIENTEToolStripMenuItem
+        '
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Name = "RETORNAREXPEDIENTEToolStripMenuItem"
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.RETORNAREXPEDIENTEToolStripMenuItem.Text = "RETORNAR EXPEDIENTE"
         '
         'EMERGENCIAToolStripMenuItem
         '
@@ -774,12 +780,6 @@ Partial Class PRINCIPAL
         Me.TXTIDENTIDAD.Size = New System.Drawing.Size(108, 20)
         Me.TXTIDENTIDAD.TabIndex = 9
         Me.TXTIDENTIDAD.Visible = False
-        '
-        'RETORNAREXPEDIENTEToolStripMenuItem
-        '
-        Me.RETORNAREXPEDIENTEToolStripMenuItem.Name = "RETORNAREXPEDIENTEToolStripMenuItem"
-        Me.RETORNAREXPEDIENTEToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
-        Me.RETORNAREXPEDIENTEToolStripMenuItem.Text = "RETORNAR EXPEDIENTE"
         '
         'PRINCIPAL
         '
