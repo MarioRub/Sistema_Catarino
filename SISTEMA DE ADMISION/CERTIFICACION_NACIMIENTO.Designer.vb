@@ -22,6 +22,7 @@ Partial Class CERTIFICACION_NACIMIENTO
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CERTIFICACION_NACIMIENTO))
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -44,8 +45,11 @@ Partial Class CERTIFICACION_NACIMIENTO
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DTPPARTO = New System.Windows.Forms.DateTimePicker()
+        Me.BTNCONFIRMAR = New System.Windows.Forms.Button()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox4
@@ -130,7 +134,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label4.Location = New System.Drawing.Point(44, 307)
+        Me.Label4.Location = New System.Drawing.Point(42, 247)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(246, 26)
         Me.Label4.TabIndex = 34
@@ -139,7 +143,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         'TXTTELEFONO
         '
-        Me.TXTTELEFONO.Location = New System.Drawing.Point(55, 253)
+        Me.TXTTELEFONO.Location = New System.Drawing.Point(583, 189)
         Me.TXTTELEFONO.Name = "TXTTELEFONO"
         Me.TXTTELEFONO.Size = New System.Drawing.Size(189, 20)
         Me.TXTTELEFONO.TabIndex = 36
@@ -148,7 +152,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(52, 233)
+        Me.Label6.Location = New System.Drawing.Point(580, 169)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(110, 17)
         Me.Label6.TabIndex = 35
@@ -157,7 +161,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         'TXTIDMAMA
         '
-        Me.TXTIDMAMA.Location = New System.Drawing.Point(55, 371)
+        Me.TXTIDMAMA.Location = New System.Drawing.Point(53, 311)
         Me.TXTIDMAMA.Name = "TXTIDMAMA"
         Me.TXTIDMAMA.Size = New System.Drawing.Size(189, 20)
         Me.TXTIDMAMA.TabIndex = 38
@@ -166,7 +170,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label7.Location = New System.Drawing.Point(52, 351)
+        Me.Label7.Location = New System.Drawing.Point(50, 291)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(98, 17)
         Me.Label7.TabIndex = 37
@@ -175,7 +179,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         'TXTGESTAS
         '
-        Me.TXTGESTAS.Location = New System.Drawing.Point(325, 372)
+        Me.TXTGESTAS.Location = New System.Drawing.Point(323, 312)
         Me.TXTGESTAS.Name = "TXTGESTAS"
         Me.TXTGESTAS.Size = New System.Drawing.Size(189, 20)
         Me.TXTGESTAS.TabIndex = 40
@@ -184,7 +188,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label8.Location = New System.Drawing.Point(322, 352)
+        Me.Label8.Location = New System.Drawing.Point(320, 292)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(127, 17)
         Me.Label8.TabIndex = 39
@@ -195,7 +199,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.CMBSEXO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
         Me.CMBSEXO.FormattingEnabled = True
-        Me.CMBSEXO.Location = New System.Drawing.Point(583, 371)
+        Me.CMBSEXO.Location = New System.Drawing.Point(581, 311)
         Me.CMBSEXO.Name = "CMBSEXO"
         Me.CMBSEXO.Size = New System.Drawing.Size(205, 21)
         Me.CMBSEXO.Sorted = True
@@ -205,7 +209,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label9.Location = New System.Drawing.Point(580, 351)
+        Me.Label9.Location = New System.Drawing.Point(578, 291)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(99, 17)
         Me.Label9.TabIndex = 41
@@ -214,21 +218,21 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         'DTPENTREGAESTIMADA
         '
+        Me.DTPENTREGAESTIMADA.Checked = False
         Me.DTPENTREGAESTIMADA.CustomFormat = "dd/MMM/yyyy"
         Me.DTPENTREGAESTIMADA.Enabled = False
         Me.DTPENTREGAESTIMADA.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPENTREGAESTIMADA.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTPENTREGAESTIMADA.Location = New System.Drawing.Point(325, 440)
+        Me.DTPENTREGAESTIMADA.Location = New System.Drawing.Point(323, 380)
         Me.DTPENTREGAESTIMADA.Name = "DTPENTREGAESTIMADA"
         Me.DTPENTREGAESTIMADA.Size = New System.Drawing.Size(189, 22)
         Me.DTPENTREGAESTIMADA.TabIndex = 43
-        Me.DTPENTREGAESTIMADA.Value = New Date(2019, 6, 18, 0, 0, 0, 0)
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label10.Location = New System.Drawing.Point(322, 420)
+        Me.Label10.Location = New System.Drawing.Point(320, 360)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(284, 17)
         Me.Label10.TabIndex = 44
@@ -239,7 +243,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label11.Location = New System.Drawing.Point(52, 420)
+        Me.Label11.Location = New System.Drawing.Point(50, 360)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(105, 17)
         Me.Label11.TabIndex = 46
@@ -248,22 +252,36 @@ Partial Class CERTIFICACION_NACIMIENTO
         '
         'DTPPARTO
         '
+        Me.DTPPARTO.Checked = False
         Me.DTPPARTO.CustomFormat = "dd/MMM/yyyy"
         Me.DTPPARTO.Enabled = False
         Me.DTPPARTO.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPPARTO.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTPPARTO.Location = New System.Drawing.Point(55, 440)
+        Me.DTPPARTO.Location = New System.Drawing.Point(53, 380)
         Me.DTPPARTO.Name = "DTPPARTO"
         Me.DTPPARTO.Size = New System.Drawing.Size(189, 22)
         Me.DTPPARTO.TabIndex = 45
-        Me.DTPPARTO.Value = New Date(2019, 6, 18, 0, 0, 0, 0)
+        '
+        'BTNCONFIRMAR
+        '
+        Me.BTNCONFIRMAR.Location = New System.Drawing.Point(295, 469)
+        Me.BTNCONFIRMAR.Name = "BTNCONFIRMAR"
+        Me.BTNCONFIRMAR.Size = New System.Drawing.Size(242, 50)
+        Me.BTNCONFIRMAR.TabIndex = 47
+        Me.BTNCONFIRMAR.Text = "Guardar Certificacion"
+        Me.BTNCONFIRMAR.UseVisualStyleBackColor = True
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'CERTIFICACION_NACIMIENTO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(834, 606)
+        Me.ClientSize = New System.Drawing.Size(834, 550)
+        Me.Controls.Add(Me.BTNCONFIRMAR)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.DTPPARTO)
         Me.Controls.Add(Me.Label10)
@@ -289,6 +307,7 @@ Partial Class CERTIFICACION_NACIMIENTO
         Me.Text = "CERTIFICACION_NACIMIENTO"
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,4 +334,6 @@ Partial Class CERTIFICACION_NACIMIENTO
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents DTPPARTO As DateTimePicker
+    Friend WithEvents BTNCONFIRMAR As Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
