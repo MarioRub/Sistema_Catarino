@@ -1,0 +1,3 @@
+﻿Public Class BUSCAR_CERTIFICACION_NACIMIENTO
+
+End Class

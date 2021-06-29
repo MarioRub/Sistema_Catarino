@@ -1249,4 +1249,36 @@ Public Class PRINCIPAL
             CERTIFICACION_NACIMIENTO.Show()
         End If
     End Sub
+
+    Private Sub BUSCARCERTIFICACIONDENACIMIENTOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BUSCARCERTIFICACIONDENACIMIENTOToolStripMenuItem.Click
+        Dim FORMULARIO As Form
+        Dim CARGADO As Boolean
+        CARGADO = False
+        Dim ADAPTADOR As New SqlDataAdapter
+        Dim COMANDO As String = "SELECT USUARIO,ESTADO, DEPARTAMENTO, ESTATUS FROM LOGIN WHERE IDENTIDAD ='" & TXTIDENTIDAD.Text & "'"
+        Dim DATO As DataSet
+        ADAPTADOR = New SqlDataAdapter(COMANDO, CONEXION)
+        Try
+            DATO = New DataSet
+            ADAPTADOR.Fill(DATO, "LOGIN")
+            For Each FORMULARIO In Me.MdiChildren
+                If DATO.Tables(0).Rows(0)("ESTATUS") = "ON" Then
+                    If FORMULARIO.Name = "BUSCAR_CERTIFICACION_NACIMIENTO" Then
+                        CARGADO = True
+                        MsgBox("EL FORMULARIO DE EXPEDIENTES YA ESTA ABIERTO POR EL USUARIO: " & Chr(13) & DATO.Tables(0).Rows(0)("USUARIO"), MsgBoxStyle.Critical, "AVISO DEL SISTEMA")
+                        Exit For
+                    End If
+                End If
+            Next FORMULARIO
+            ADAPTADOR.Dispose()
+            DATO.Dispose()
+        Catch ex As Exception
+            'MsgBox(ex.Message)
+            MsgBox("EL USUARIO NO EXISTE")
+        End Try
+        FORMULARIO = Nothing
+        If CARGADO = False Then
+            BUSCAR_CERTIFICACION_NACIMIENTO.Show()
+        End If
+    End Sub
 End Class

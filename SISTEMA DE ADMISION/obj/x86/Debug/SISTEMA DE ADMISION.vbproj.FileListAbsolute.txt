@@ -1035,3 +1035,4 @@ C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMA
 C:\Users\mariorub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SYSTEMADMISION.pdb
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA DE ADMISION.vbproj.AssemblyReference.cache
 C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.CERTIFICACION_NACIMIENTO.resources
+C:\Users\MarioRub\dev\Sistema_Catarino\SISTEMA DE ADMISION\obj\x86\Debug\SISTEMA_DE_ADMISION.BUSCAR_CERTIFICACION_NACIMIENTO.resources
