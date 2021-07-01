@@ -23,7 +23,7 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BUSCAR_CERTIFICACION_NACIMIENTO))
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DGVGENERAL = New System.Windows.Forms.DataGridView()
@@ -32,6 +32,8 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         Me.TXTEXPEDIENTE = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BTNCONFIRMAR = New System.Windows.Forms.Button()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVGENERAL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,14 +66,14 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         Me.DGVGENERAL.AllowUserToResizeRows = False
         Me.DGVGENERAL.BackgroundColor = System.Drawing.Color.Silver
         Me.DGVGENERAL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVGENERAL.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVGENERAL.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVGENERAL.ColumnHeadersHeight = 30
         Me.DGVGENERAL.Location = New System.Drawing.Point(12, 224)
         Me.DGVGENERAL.MultiSelect = False
@@ -87,7 +89,7 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         Me.BTNBUSCAR.BackgroundImage = CType(resources.GetObject("BTNBUSCAR.BackgroundImage"), System.Drawing.Image)
         Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNBUSCAR.Enabled = False
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(699, 133)
+        Me.BTNBUSCAR.Location = New System.Drawing.Point(297, 131)
         Me.BTNBUSCAR.Name = "BTNBUSCAR"
         Me.BTNBUSCAR.Size = New System.Drawing.Size(81, 77)
         Me.BTNBUSCAR.TabIndex = 145
@@ -99,7 +101,7 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         Me.BTNSALIR.BackgroundImage = CType(resources.GetObject("BTNSALIR.BackgroundImage"), System.Drawing.Image)
         Me.BTNSALIR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNSALIR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSALIR.Location = New System.Drawing.Point(784, 133)
+        Me.BTNSALIR.Location = New System.Drawing.Point(382, 131)
         Me.BTNSALIR.Name = "BTNSALIR"
         Me.BTNSALIR.Size = New System.Drawing.Size(81, 77)
         Me.BTNSALIR.TabIndex = 146
@@ -107,7 +109,7 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         '
         'TXTEXPEDIENTE
         '
-        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(131, 162)
+        Me.TXTEXPEDIENTE.Location = New System.Drawing.Point(43, 160)
         Me.TXTEXPEDIENTE.Name = "TXTEXPEDIENTE"
         Me.TXTEXPEDIENTE.Size = New System.Drawing.Size(226, 20)
         Me.TXTEXPEDIENTE.TabIndex = 148
@@ -116,7 +118,7 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label8.Location = New System.Drawing.Point(128, 133)
+        Me.Label8.Location = New System.Drawing.Point(40, 131)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 17)
         Me.Label8.TabIndex = 147
@@ -133,12 +135,33 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
         Me.Label3.TabIndex = 149
         Me.Label3.Text = "FORMULARIO PARA BUSCAR CERTIFICACION DE NACIMIENTO"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(484, 131)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(416, 18)
+        Me.Label1.TabIndex = 150
+        Me.Label1.Text = "CONFIRMAR ENTREGA CERTIFICACION DE NACIMIENTO:"
+        '
+        'BTNCONFIRMAR
+        '
+        Me.BTNCONFIRMAR.Location = New System.Drawing.Point(836, 160)
+        Me.BTNCONFIRMAR.Name = "BTNCONFIRMAR"
+        Me.BTNCONFIRMAR.Size = New System.Drawing.Size(175, 35)
+        Me.BTNCONFIRMAR.TabIndex = 151
+        Me.BTNCONFIRMAR.Text = "Confirmar"
+        Me.BTNCONFIRMAR.UseVisualStyleBackColor = True
+        '
         'BUSCAR_CERTIFICACION_NACIMIENTO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(1025, 518)
+        Me.Controls.Add(Me.BTNCONFIRMAR)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TXTEXPEDIENTE)
         Me.Controls.Add(Me.Label8)
@@ -165,4 +188,6 @@ Partial Class BUSCAR_CERTIFICACION_NACIMIENTO
     Friend WithEvents TXTEXPEDIENTE As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents BTNCONFIRMAR As Button
 End Class
